@@ -294,10 +294,42 @@ def build_latest_redirect(latest_date, out_path):
 
 # ---------------------------------------------------------------- 主流程
 
+def git_commit_push():
+    """提交 public/ 与 md/ 的变更并推送到 origin/main。失败不致命，仅告警。"""
+    import subprocess
+    try:
+        subprocess.run(["git", "add", "-A"], cwd=ROOT, check=True,
+                       capture_output=True)
+        # 没有变更就跳过提交
+        st = subprocess.run(["git", "status", "--porcelain"], cwd=ROOT,
+                            capture_output=True, text=True)
+        if not st.stdout.strip():
+            print("  · 无内容变更，跳过 git 提交")
+            return True
+        subprocess.run(["git", "commit", "-q", "-m",
+                        "每日构建：更新日报归档与索引首页"], cwd=ROOT,
+                       check=True, capture_output=True)
+        # 推送（无人值守：若需交互凭据则会失败，仅告警）
+        push = subprocess.run(["git", "push", "origin", "main"], cwd=ROOT,
+                              capture_output=True, text=True, timeout=120)
+        if push.returncode == 0:
+            print("  ✓ 已推送到 GitHub（Cloudflare Pages 将自动重新部署）")
+            return True
+        else:
+            print("  ! git push 失败（可能需交互凭据或网络问题）：")
+            print("    " + (push.stderr or push.stdout).strip().splitlines()[-1])
+            return False
+    except Exception as e:  # noqa
+        print("  ! git 操作异常：%s" % e)
+        return False
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--src", default=os.path.dirname(ROOT),
                     help="日报源目录（默认为仓库上一级目录）")
+    ap.add_argument("--push", action="store_true",
+                    help="构建完成后自动 git 提交并推送到 GitHub（触发 Pages 自动部署）")
     args = ap.parse_args()
     src = os.path.abspath(args.src)
 
@@ -330,6 +362,11 @@ def main():
                   fh, ensure_ascii=False, indent=2)
 
     print("\n完成：%d 期，索引 public/index.html" % len(days))
+
+    if args.push:
+        print("— 自动发布到 GitHub —")
+        git_commit_push()
+
     return 0
 
 
