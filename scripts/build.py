@@ -164,7 +164,6 @@ ul.hl li:before{content:"▍";position:absolute;left:0;color:var(--accent);font-
   box-shadow:0 10px 28px rgba(31,111,235,.5)}
 .hero-btn .arr{font-size:19px;transition:transform .14s}
 .hero-btn:hover .arr{transform:translateX(4px)}
-.hero-meta{font-size:12px;color:var(--muted);margin-left:18px;display:inline-block;vertical-align:middle}
 .note{background:var(--panel);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
   padding:12px 16px;margin:16px 0;font-size:13px;color:#c3ccd6}
 .note p{margin:4px 0}
@@ -202,13 +201,11 @@ def render_hl(meta):
 
 def render_links(rec, hero=False):
     date = rec["date"]
-    md = ('<a href="../md/%s.md">Markdown 源</a>' % date) if rec["md"] else ""
     if hero:
         return ('<a class="hero-btn" href="%s.html">阅读今日日报 <span class="arr">→</span></a>'
-                '<span class="hero-meta">%s KB · Markdown 源%s</span>'
-                % (date, rec["size_kb"], " 可下载" if rec["md"] else ""))
-    return ('<div class="links"><a href="%s.html"><strong>%s</strong></a>%s'
-            '<span class="kb">%s KB</span></div>' % (date, "阅读全文 →", md, rec["size_kb"]))
+                % date)
+    return ('<div class="links"><a href="%s.html"><strong>%s</strong></a>'
+            '<span class="kb">%s KB</span></div>' % (date, "阅读全文 →", rec["size_kb"]))
 
 
 def build_index(days, out_path):
