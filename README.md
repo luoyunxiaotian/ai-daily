@@ -2,7 +2,9 @@
 
 每日追踪 **AI Coding** 与 **具身智能** 领域动态，自动生成静态站点并部署到 Cloudflare Pages。
 
-线上地址：`https://ai-daily.pages.dev`
+线上地址：`https://ai-news-2026.pages.dev`
+
+> 注：Cloudflare Pages 子域名按「项目名」生成，`ai-daily.pages.dev` 已被他人占用，故本项目名用 `ai-news-2026`，仓库名仍为 `ai-daily`。
 
 ## 内容口径
 
