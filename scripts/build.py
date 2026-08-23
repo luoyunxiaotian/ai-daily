@@ -156,6 +156,15 @@ ul.hl li:before{content:"▍";position:absolute;left:0;color:var(--accent);font-
 .links{margin-top:14px;padding-top:12px;border-top:1px solid var(--border);
   display:flex;gap:14px;font-size:12.5px;align-items:center}
 .links .kb{margin-left:auto;color:var(--muted);font-size:11.5px}
+.hero-btn{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:14px 30px;
+  font-size:17px;font-weight:700;color:#fff;text-decoration:none;border-radius:12px;
+  background:linear-gradient(135deg,#1f6feb,#58a6ff);box-shadow:0 6px 20px rgba(31,111,235,.35);
+  transition:transform .14s,box-shadow .14s,filter .14s}
+.hero-btn:hover{text-decoration:none;transform:translateY(-2px);filter:brightness(1.08);
+  box-shadow:0 10px 28px rgba(31,111,235,.5)}
+.hero-btn .arr{font-size:19px;transition:transform .14s}
+.hero-btn:hover .arr{transform:translateX(4px)}
+.hero-meta{font-size:12px;color:var(--muted);margin-left:18px;display:inline-block;vertical-align:middle}
 .note{background:var(--panel);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
   padding:12px 16px;margin:16px 0;font-size:13px;color:#c3ccd6}
 .note p{margin:4px 0}
@@ -194,9 +203,12 @@ def render_hl(meta):
 def render_links(rec, hero=False):
     date = rec["date"]
     md = ('<a href="../md/%s.md">Markdown 源</a>' % date) if rec["md"] else ""
-    label = "阅读今日日报 →" if hero else "阅读全文 →"
+    if hero:
+        return ('<a class="hero-btn" href="%s.html">阅读今日日报 <span class="arr">→</span></a>'
+                '<span class="hero-meta">%s KB · Markdown 源%s</span>'
+                % (date, rec["size_kb"], " 可下载" if rec["md"] else ""))
     return ('<div class="links"><a href="%s.html"><strong>%s</strong></a>%s'
-            '<span class="kb">%s KB</span></div>' % (date, label, md, rec["size_kb"]))
+            '<span class="kb">%s KB</span></div>' % (date, "阅读全文 →", md, rec["size_kb"]))
 
 
 def build_index(days, out_path):
