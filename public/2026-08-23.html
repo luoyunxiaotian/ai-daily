@@ -59,6 +59,18 @@
   .bar-score{width:52px;flex-shrink:0;color:var(--muted);font-size:11.5px}
   .toc{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin:16px 0}
   .toc a{display:inline-block;margin:3px 10px 3px 0;font-size:13px}
+  /* 目录章节号：醒目的可点击外观 + 跳转引导 */
+  .toc-jump{display:inline-block;min-width:26px;text-align:center;padding:3px 9px;border-radius:8px;
+    background:linear-gradient(135deg,#1f6feb,#58a6ff);color:#fff !important;font-weight:700;
+    box-shadow:0 2px 8px rgba(31,111,235,.3);transition:transform .12s,filter .12s}
+  .toc-jump:hover{text-decoration:none !important;transform:translateY(-2px);filter:brightness(1.08)}
+  /* 目标标题：悬停高亮 + 锚点提示，提示读者可定位 */
+  h2[id]{cursor:default;position:relative;transition:background .15s}
+  h2[id]:hover{background:rgba(88,166,255,.07);border-radius:8px;padding-left:8px}
+  h2[id]::after{content:"🔗 此章节可从目录定位";position:absolute;left:100%;top:6px;margin-left:12px;
+    font-size:11.5px;color:var(--accent);white-space:nowrap;opacity:0;transition:opacity .15s;pointer-events:none}
+  h2[id]:hover::after{opacity:1}
+  @media(max-width:780px){h2[id]::after{display:none}}
   .foot{color:var(--muted);font-size:12px;margin-top:36px;text-align:center;border-top:1px solid var(--border);padding-top:16px}
   @media(max-width:780px){.bar-name{width:120px}.bar-val{width:70px}body{padding:14px}}
 </style>
@@ -66,8 +78,8 @@
 <body>
 <h1>🤖 AI 日报 · 2026-08-23（周日）</h1>
 <blockquote><p><strong>生成时间</strong>：2026-08-23 10:20 CST（更新版 / 第九次生成）</p><p><strong>覆盖窗口</strong>：2026-08-21 18:00 — 2026-08-23 10:20 CST</p><p><strong>侧重方向</strong>：AI Coding · 具身智能</p><p><strong>实时数据源（本次全部现场抓取，非缓存）</strong>：</p><p>· <code>llm-stats.com</code> 首页嵌入数据 — 抓取于 10:06 CST，全榜 <strong>359</strong> 款模型</p><p>· <code>livebench.ai</code> <code>table_2026_06_25.csv</code> + <code>cost_2026_06_25.csv</code> — 抓取于 10:12 CST，<strong>46</strong> 款模型 × 23 子项</p><p>· <code>artificialanalysis.ai</code> 首页嵌入数据 — 抓取于 10:15 CST，<strong>28</strong> 款模型（Intelligence Index v4.1）</p><p>· GitHub Search API 日榜（AI 专项 + 综合）— 抓取于 10:32–10:34 CST</p><p><strong>本次更新要点</strong>：今日 09:00 版发出后，新增交叉核验到 <strong>Ox Alpha 匿名模型已被 LiveBench 正式收录</strong>，审计分数与社区疯传的"碾压 Fable 5"存在重大落差（详见第 2 条与「社区快讯」）。此为本版最重要的新增结论。</p></blockquote>
-<h3 id="目录">目录</h3>
-<table><thead><tr><th>章节</th><th>内容</th><th>条目数</th></tr></thead><tbody><tr><td><a href="#一社区信源监控今日一手线索快于媒体" target="_blank">一</a></td><td>社区信源监控（X / Reddit / HN / 微博 一手线索 + 验证状态）</td><td>18 条线索</td></tr><tr><td><a href="#二deepseek-专项--今日有-d-非今日无d" target="_blank">二</a></td><td><strong>DeepSeek 专项</strong> —— 今日有 D ✅</td><td>D1–D7</td></tr><tr><td><a href="#三今日-15-条精选" target="_blank">三</a></td><td>今日 15 条精选（AI Coding 8 条 + 具身智能 7 条）</td><td>15 条</td></tr><tr><td><a href="#四社区快讯待验证--低置信度" target="_blank">四</a></td><td>社区快讯（单源未交叉验证，单列）</td><td>S1–S5</td></tr><tr><td><a href="#五截至今日-ai-多项能力评分表三口径交叉验证" target="_blank">五</a></td><td><strong>能力评分与价格表</strong>（LiveBench 46 款 / AA 28 款 / llm-stats 359 款 / Price vs Performance）</td><td>4 张表</td></tr><tr><td><a href="#六github-当日趋势榜开源生态风向标" target="_blank">六</a></td><td>GitHub 当日趋势榜（AI 专项 + 综合）</td><td>27 项目</td></tr><tr><td><a href="#七方法论与免责声明" target="_blank">七</a></td><td>方法论、信源分级规则与免责声明</td><td>—</td></tr></tbody></table>
+<h3 id="目录">📑 目录 <span style="font-size:12px;color:var(--muted);font-weight:400">（👆 点击左侧「一 ~ 七」章节号，本页就地跳转到对应位置）</span></h3>
+<table><thead><tr><th>章节</th><th>内容</th><th>条目数</th></tr></thead><tbody><tr><td><a class="toc-jump" href="#一社区信源监控今日一手线索快于媒体">一</a></td><td>社区信源监控（X / Reddit / HN / 微博 一手线索 + 验证状态）</td><td>18 条线索</td></tr><tr><td><a class="toc-jump" href="#二deepseek-专项--今日有-d-非今日无d">二</a></td><td><strong>DeepSeek 专项</strong> —— 今日有 D ✅</td><td>D1–D7</td></tr><tr><td><a class="toc-jump" href="#三今日-15-条精选">三</a></td><td>今日 15 条精选（AI Coding 8 条 + 具身智能 7 条）</td><td>15 条</td></tr><tr><td><a class="toc-jump" href="#四社区快讯待验证--低置信度">四</a></td><td>社区快讯（单源未交叉验证，单列）</td><td>S1–S5</td></tr><tr><td><a class="toc-jump" href="#五截至今日-ai-多项能力评分表三口径交叉验证">五</a></td><td><strong>能力评分与价格表</strong>（LiveBench 46 款 / AA 28 款 / llm-stats 359 款 / Price vs Performance）</td><td>4 张表</td></tr><tr><td><a class="toc-jump" href="#六github-当日趋势榜开源生态风向标">六</a></td><td>GitHub 当日趋势榜（AI 专项 + 综合）</td><td>27 项目</td></tr><tr><td><a class="toc-jump" href="#七方法论与免责声明">七</a></td><td>方法论、信源分级规则与免责声明</td><td>—</td></tr></tbody></table>
 <hr>
 <h2 id="一社区信源监控今日一手线索快于媒体">一、社区信源监控（今日一手线索，快于媒体）</h2>
 <blockquote><p>原则：重大动态先在社区发酵，媒体报道有延迟。以下为本次实际检索到的社区一手线索及其验证状态。</p></blockquote>
@@ -170,5 +182,20 @@
 <p class="sub" style="text-align:center">本报告由 WorkBuddy 每日 AI 新闻推送自动化任务生成 · 第九次迭代（社区信源强化 + 三口径评分交叉验证版）</p>
 <p class="sub" style="text-align:center">生成时间：2026-08-23 10:35 CST · 下次执行：2026-08-24 09:00 CST</p>
 <div class="foot">WorkBuddy 每日 AI 新闻推送 · 自动化任务 automation-1786929626842<br>生成时间 2026-08-23 10:35 CST · 数据源：llm-stats.com / livebench.ai / artificialanalysis.ai / GitHub API / X / Reddit / HN / 微博<br>社区快讯段落未经官方确认，请勿据此决策</div>
+<script>
+// 目录/页内锚点：一律本页就地平滑滚动，绝不新开标签页
+document.addEventListener('click', function(e){
+  var a = e.target.closest('a[href^="#"]');
+  if(!a) return;
+  var id = a.getAttribute('href').slice(1);
+  var el = id ? document.getElementById(id) : null;
+  if(el){
+    e.preventDefault();
+    el.scrollIntoView({behavior:'smooth', block:'start'});
+    // 更新地址栏 hash 便于分享/返回，但不触发跳转
+    if(history.replaceState) history.replaceState(null, '', '#' + id);
+  }
+});
+</script>
 </body>
 </html>
