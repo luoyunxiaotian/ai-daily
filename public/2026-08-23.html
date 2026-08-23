@@ -73,6 +73,20 @@
   @media(max-width:780px){h2[id]::after{display:none}}
   .foot{color:var(--muted);font-size:12px;margin-top:36px;text-align:center;border-top:1px solid var(--border);padding-top:16px}
   @media(max-width:780px){.bar-name{width:120px}.bar-val{width:70px}body{padding:14px}}
+  /* 左下角浮动「返回目录」按钮：固定定位，跟随页面滚动 */
+  .back-toc{
+    position:fixed;left:20px;bottom:20px;z-index:50;
+    display:inline-flex;align-items:center;gap:6px;
+    background:linear-gradient(135deg,#58a6ff,#39c5cf);
+    color:#06121f;font-size:14px;font-weight:700;
+    padding:11px 16px;border-radius:24px;cursor:pointer;
+    box-shadow:0 4px 16px rgba(0,0,0,.45);border:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .back-toc:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(88,166,255,.5)}
+  .back-toc:active{transform:translateY(0)}
+  @media(max-width:780px){.back-toc{left:12px;bottom:12px;font-size:13px;padding:9px 13px}}
 </style>
 </head>
 <body>
@@ -182,6 +196,7 @@
 <p class="sub" style="text-align:center">本报告由 WorkBuddy 每日 AI 新闻推送自动化任务生成 · 第九次迭代（社区信源强化 + 三口径评分交叉验证版）</p>
 <p class="sub" style="text-align:center">生成时间：2026-08-23 10:35 CST · 下次执行：2026-08-24 09:00 CST</p>
 <div class="foot">WorkBuddy 每日 AI 新闻推送 · 自动化任务 automation-1786929626842<br>生成时间 2026-08-23 10:35 CST · 数据源：llm-stats.com / livebench.ai / artificialanalysis.ai / GitHub API / X / Reddit / HN / 微博<br>社区快讯段落未经官方确认，请勿据此决策</div>
+<button class="back-toc" id="backToc" type="button" title="返回顶部目录">📑 返回目录</button>
 <script>
 // 目录/页内锚点：一律本页就地平滑滚动，绝不新开标签页
 document.addEventListener('click', function(e){
@@ -195,6 +210,12 @@ document.addEventListener('click', function(e){
     // 更新地址栏 hash 便于分享/返回，但不触发跳转
     if(history.replaceState) history.replaceState(null, '', '#' + id);
   }
+});
+// 左下角「返回目录」浮动按钮：平滑滚回目录章节
+document.getElementById('backToc').addEventListener('click', function(){
+  var toc = document.getElementById('目录');
+  if(toc){ toc.scrollIntoView({behavior:'smooth', block:'start'}); if(history.replaceState) history.replaceState(null,'','#目录'); }
+  else { window.scrollTo({top:0, behavior:'smooth'}); }
 });
 </script>
 </body>
