@@ -1,57 +1,13 @@
 [
   {
-    "date": "2026-08-23",
-    "weekday": "周日",
+    "date": "2026-08-24",
+    "weekday": "周一",
     "deepseek": true,
-    "items": 24,
+    "items": 28,
     "highlights": [
-      "Ox Alpha 匿名模型登陆 LiveBench——审计分数与社区疯传落差巨大",
-      "DeepSeek API 周末全天低谷价，今日 00:00 生效",
-      "Anthropic 全面开放 Claude 平台三大 API：Computer Use / Skills / Files"
-    ]
-  },
-  {
-    "date": "2026-08-22",
-    "weekday": "周六",
-    "deepseek": true,
-    "items": 15,
-    "highlights": [
-      "OpenAI 全面开源 Codex Harness（Apache-2.0）",
-      "英伟达 $60 亿获 Poolside 授权 + $10 亿投资",
-      "Claude Code 上线\"自托管环境\"（Runner）"
-    ]
-  },
-  {
-    "date": "2026-08-21",
-    "weekday": "周五",
-    "deepseek": true,
-    "items": 20,
-    "highlights": [
-      "OpenAI 全面开源 Codex Harness —— 把\"顶级 Agent 发动机\"免费送出",
-      "DeepSeek Harness 发布 RC.8：多模态 + 把 Claude Code / Codex 收编为子代理",
-      "Anthropic 最快本月底公开递交 IPO 文件，募资或超 SpaceX 862 亿美元纪录"
-    ]
-  },
-  {
-    "date": "2026-08-19",
-    "weekday": "周三",
-    "deepseek": true,
-    "items": 15,
-    "highlights": [
-      "【AI Coding · 安全】OpenAI 暂停下一代模型 Astra 训练，并推出青少年版 ChatGPT",
-      "【AI Coding · 方法论】StateM 论文：不换模型权重，\"Harness Scaling\" 把 Terminal-Bench 推到 95.3%",
-      "【AI Coding · 平台】Cursor 发布 Origin 代码托管平台，正面挑战 GitHub"
-    ]
-  },
-  {
-    "date": "2026-08-18",
-    "weekday": "周二",
-    "deepseek": true,
-    "items": 15,
-    "highlights": [
-      "【AI Coding · 定价】DeepSeek V4 Pro 峰谷定价 8/17 正式生效，国产模型首破\"价格战\"",
-      "【AI Coding · 上下文】OpenAI Codex 向 ChatGPT 账号开放百万 Token 上下文",
-      "【AI Coding · 架构】OpenAI 发布 GPT-5.6 Builder's Guide：长时 Agent 架构让 ARC-AGI-3 从 13.3%→38.3%"
+      "OpenAI 完全开源 Codex Harness——Agent 运行时全公开，仅改两处 GPT-5.6 Sol 在 ARC-AGI-3 从 13.3% 涨至 38.3%",
+      "Cloudflare 为 Agent 造浏览器、钱包与支付协议——\"无人在环\"的 Agent 经济雏形",
+      "Claude Code 登顶 Agent Harness 排名——长自主会话默认选择"
     ]
   }
 ]
