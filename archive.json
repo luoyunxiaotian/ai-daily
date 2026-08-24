@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-08-25",
+    "weekday": "周二",
+    "deepseek": true,
+    "items": 27,
+    "highlights": [
+      "OpenAI Codex CLI v0.149.1 发布 + v0.150.0 alpha：签名管线迁至 Azure Key Vault",
+      "Ox Alpha「牛来」匿名模型：免费进 OpenCode，指纹指向智谱 GLM，8/27 免费截止",
+      "OpenAI GPT-5.6 Sol 降价超 20%、输出降至 $20/M——海外价格战升温"
+    ]
+  },
+  {
     "date": "2026-08-24",
     "weekday": "周一",
     "deepseek": true,
