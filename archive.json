@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-08-26",
+    "weekday": "周三",
+    "deepseek": true,
+    "items": 28,
+    "highlights": [
+      "OpenAI 开源 Codex Harness（Apache-2.0）：AI 竞赛重心从模型转向执行层",
+      "GPT-5.6 家族登陆 Kiro（AWS 合作），Terminal-Bench 2.1 成本降 82%",
+      "OpenAI ChatGPT Work：Codex 改造面向非工程师，$20/月，组织订阅仅 17%"
+    ]
+  },
+  {
     "date": "2026-08-25",
     "weekday": "周二",
     "deepseek": true,
