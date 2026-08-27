@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-08-28",
+    "weekday": "周五",
+    "deepseek": true,
+    "items": 24,
+    "highlights": [
+      "Agent Plugins 1.0 发布：执行层迎来厂商中立标准",
+      "OpenAI Codex rust-v0.149.0 + Anthropic MHS：编码底座从软件到硬件标准化",
+      "vLLM v0.28.0：Kimi K3 + DeepSeek V4 通过 speed pass，开源推理栈适配国产模型"
+    ]
+  },
+  {
     "date": "2026-08-27",
     "weekday": "周四",
     "deepseek": true,
