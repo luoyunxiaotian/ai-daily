@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-08-29",
+    "weekday": "周六",
+    "deepseek": true,
+    "items": 28,
+    "highlights": [
+      "Agent 插件标准化加速：GitHub 今日趋势榜四箭齐发",
+      "Anthropic 发布 Model Hardware Standard（MHS）+ OpenAI Codex 持久化推理 SDK",
+      "腾讯 Hy4 Preview 开源：770B/49B 激活，盲测略优于 GLM-5.3 与 Kimi K3"
+    ]
+  },
+  {
     "date": "2026-08-28",
     "weekday": "周五",
     "deepseek": true,
