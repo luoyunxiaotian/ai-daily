@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 · 2026-09-02（周三）</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2330; --border:#2a3340;
+    --txt:#e6edf3; --muted:#9da7b3; --accent:#58a6ff; --green:#3fb950;
+    --yellow:#e3b341; --red:#f85149; --purple:#bc8cff; --cyan:#39c5cf;
+    --r-sm:8px; --r-md:12px; --r-lg:16px;
+    --s-1:8px; --s-2:16px; --s-3:24px; --s-4:36px;
+    --shadow-1:0 1px 2px rgba(0,0,0,.25);
+    --shadow-2:0 6px 20px rgba(0,0,0,.35);
+    --shadow-glow:0 6px 24px rgba(88,166,255,.18);
+    --font-display:"Space Grotesk","Segoe UI","Microsoft YaHei",sans-serif;
+    --font-body:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;
+    --ease:cubic-bezier(.2,0,0,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:var(--font-body);line-height:1.7;
+    padding:var(--s-3);max-width:1200px;margin:0 auto;font-size:15px}
+  h1{font-family:var(--font-display);font-size:clamp(26px,3.2vw,34px);margin-bottom:var(--s-1);letter-spacing:.3px}
+  h2{font-family:var(--font-display);font-size:clamp(19px,2.4vw,24px);margin:var(--s-4) 0 var(--s-2);
+    padding-bottom:var(--s-1);border-bottom:1px solid var(--border);color:var(--accent);
+    scroll-margin-top:var(--s-2);letter-spacing:.3px}
+  h3{font-size:clamp(15px,1.8vw,17px);margin:var(--s-3) 0 var(--s-1);color:var(--cyan);letter-spacing:.2px}
+  h4{font-size:14.5px;margin:var(--s-2) 0 var(--s-1);color:var(--txt);
+    padding:6px 0 6px 10px;border-left:3px solid var(--purple)}
+  p{margin:var(--s-1) 0;font-size:15px}
+  blockquote{background:var(--panel);border-left:3px solid var(--accent);border-radius:0 var(--r-sm) var(--r-sm) 0;
+             padding:12px 16px;margin:var(--s-2) 0;font-size:13.5px;color:#c3ccd6;box-shadow:var(--shadow-1)}
+  blockquote p{margin:3px 0;font-size:13.5px}
+  ul,ol{margin:var(--s-1) 0 var(--s-1) 24px;font-size:15px}
+  li{margin:6px 0;line-height:1.65}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:var(--s-2) 0}
+  th,td{border:1px solid var(--border);padding:8px 10px;text-align:center;vertical-align:top}
+  th{background:var(--panel2);color:var(--accent);font-weight:600;position:sticky;top:0;
+     box-shadow:0 1px 0 var(--border)}
+  tbody tr:nth-child(even){background:rgba(255,255,255,.022)}
+  tbody tr:hover{background:rgba(88,166,255,.07)}
+  td:nth-child(2){text-align:left}
+  .scroll{overflow-x:auto;max-height:640px;overflow-y:auto;border:1px solid var(--border);
+    border-radius:var(--r-md);box-shadow:var(--shadow-1)}
+  .scroll table{margin:0;border:0}
+  details{background:var(--panel);border:1px solid var(--border);border-radius:var(--r-md);
+    padding:12px 16px;margin:var(--s-2) 0;box-shadow:var(--shadow-1)}
+  summary{cursor:pointer;color:var(--accent);font-size:14px;font-weight:600;outline:none;
+    transition:color .15s var(--ease)}
+  summary:hover{color:var(--cyan)}
+  details[open] summary{margin-bottom:var(--s-1)}
+  code{background:var(--panel2);padding:2px 6px;border-radius:var(--r-sm);font-size:12.5px;color:var(--yellow)}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  hr{border:0;border-top:1px solid var(--border);margin:var(--s-3) 0}
+  strong{color:#fff}
+  .ds-banner{background:linear-gradient(90deg,rgba(57,197,207,.18),rgba(57,197,207,.04));
+             border:1px solid var(--cyan);border-radius:12px;padding:14px 18px;margin:16px 0}
+  .tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600;white-space:nowrap}
+  .t-conf{background:rgba(63,185,80,.15);color:var(--green);border:1px solid var(--green)}
+  .t-prob{background:rgba(227,179,65,.15);color:var(--yellow);border:1px solid var(--yellow)}
+  .t-pend{background:rgba(248,81,73,.13);color:var(--red);border:1px solid var(--red)}
+  .t-mute{background:rgba(157,167,179,.12);color:var(--muted);border:1px solid var(--border)}
+  .pvp{background:var(--panel);border:1px solid var(--border);border-radius:var(--r-md);
+    padding:var(--s-2) var(--s-3);margin:var(--s-2) 0;box-shadow:var(--shadow-1)}
+  .pvp h3{margin-top:0}
+  .bar-row{display:flex;align-items:center;gap:10px;margin:9px 0;font-size:13px}
+  .bar-name{width:210px;flex-shrink:0;text-align:right;color:var(--muted);white-space:nowrap;
+    overflow:hidden;text-overflow:ellipsis}
+  .bar-name.ds{color:var(--cyan);font-weight:700}
+  .bar-track{flex:1;background:var(--panel2);border-radius:var(--r-sm);overflow:hidden;height:20px;min-width:80px}
+  .bar-fill{height:100%;border-radius:var(--r-sm);background:linear-gradient(90deg,#1f6feb,#58a6ff);
+    transition:width .6s var(--ease)}
+  .bar-fill.ds{background:linear-gradient(90deg,#1a7f86,#39c5cf)}
+  .bar-val{width:86px;flex-shrink:0;color:var(--green);font-weight:700;text-align:right}
+  .bar-score{width:118px;flex-shrink:0;color:var(--muted);font-size:11.5px}
+  .toc{background:var(--panel);border:1px solid var(--border);border-radius:var(--r-md);
+    padding:var(--s-2) var(--s-3);margin:var(--s-2) 0;box-shadow:var(--shadow-1)}
+  .toc a{display:inline-block;margin:4px 10px 4px 0;font-size:13px}
+  .toc-jump{display:inline-block;min-width:28px;text-align:center;padding:4px 10px;border-radius:var(--r-sm);
+    background:linear-gradient(135deg,#1f6feb,#58a6ff);color:#fff !important;font-weight:700;
+    box-shadow:0 2px 8px rgba(31,111,235,.3);transition:transform .12s var(--ease),filter .12s var(--ease)}
+  .toc-jump:hover{text-decoration:none !important;transform:translateY(-2px);filter:brightness(1.08)}
+  h2[id]{cursor:default;position:relative;transition:background .15s var(--ease)}
+  h2[id]:hover{background:rgba(88,166,255,.07);border-radius:var(--r-sm);padding-left:8px}
+  h2[id]::after{content:"\1F517 此章节可从目录定位";position:absolute;left:100%;top:6px;margin-left:12px;
+    font-size:11.5px;color:var(--accent);white-space:nowrap;opacity:0;transition:opacity .15s;pointer-events:none}
+  h2[id]:hover::after{opacity:1}
+  @media(max-width:780px){h2[id]::after{display:none}}
+  .foot{color:var(--muted);font-size:12px;margin-top:var(--s-4);text-align:center;
+    border-top:1px solid var(--border);padding-top:var(--s-2)}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  h2,h3,.pvp,.scroll,details,blockquote{animation:fadeUp .5s var(--ease) both}
+  @media(prefers-reduced-motion:reduce){*{animation:none !important}}
+  @media(max-width:780px){.bar-name{width:120px}.bar-val{width:70px}.bar-score{display:none}body{padding:var(--s-2)}}
+  .back-toc{
+    position:fixed;left:20px;bottom:20px;z-index:50;
+    display:inline-flex;align-items:center;gap:6px;
+    background:linear-gradient(135deg,#58a6ff,#39c5cf);
+    color:#06121f;font-size:14px;font-weight:700;
+    padding:11px 16px;border-radius:24px;cursor:pointer;
+    box-shadow:0 4px 16px rgba(0,0,0,.45);border:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .back-toc:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(88,166,255,.5)}
+  .back-toc:active{transform:translateY(0)}
+  @media(max-width:780px){.back-toc{left:12px;bottom:12px;font-size:13px;padding:9px 13px}}
+</style>
+</head>
+<body>
+<h1>AI 日报 · 2026-09-02（周三）</h1>
+<blockquote><p><strong>聚焦方向</strong>：AI Coding（AI 编程）× 具身智能</p><p><strong>生成时间</strong>：2026-09-02 07:40 (GMT+8)</p><p><strong>今日结论速览</strong>：DeepSeek <strong>今日无 D</strong>（过去 24 小时 9/1–9/2 无原生重大新动态，仅有微信支付接入 Harness 生态动作与对 8/31 财务数据的二次解读）；AI Coding 侧最大变量是 <strong>Anthropic 发布 Claude Fable 5.1 / Mythos 5.1，Fable 5.1 成为 Claude Code 默认模型且缓存读取价降 75%</strong>（LiveBench 综合 83.4 居首）与 <strong>GitHub Copilot 模型大调整 + xAI Grok 4.6 入驻</strong>；具身智能侧最大变量是 <strong>小鹏机器人首轮超 9 亿美元融资（估值 63 亿美元）</strong> 与 <strong>优必选 H1 人形销量 16123 台、U1 系列 9/16 启动交付</strong>。</p><p><strong>口径说明</strong>：每条均标注「时效」与「来源」。时效分 <code>当日</code>／<code>近 2 日</code>／<code>本周</code>；来源给出可核验主体。字幕类内容标注"字幕由平台自动生成"。</p><p><strong>实时数据源</strong>：① 多引擎新闻检索 + Exa + Frontier Daily（中英文媒体/社区，2026-09-02 抓取）；② GitHub AI 趋势榜（日榜/周榜双周期，2026-09-02 07:40 抓取）；③ livebench.ai（2026-06-25 发布实时榜，2026-09-02 直采）、artificialanalysis.ai（Intelligence Index v4.1.1 快照）、llm-stats.com（2026-09-02 实时榜，369 模型）；④ B 站 UP 主字幕口径：黑鸦Heya（1 个视频 / 13 行字幕已提取）、Icyの狼（24h 更新为个人实验/社区灰测类，无资讯类新闻）、无机酸-_-（24h 更新为个人测评作品，未引用结论）。</p></blockquote>
+<hr>
+<h2 id="toc">目录</h2>
+<div class="toc"><table><thead><tr><th>章节</th><th>内容</th><th>条目数</th></tr></thead><tbody><tr><td><a class="toc-jump" href="#一社区信源监控今日一手线索快于媒体">一</a></td><td>社区信源监控（一手线索，快于媒体）</td><td>3 个信源</td></tr><tr><td><a class="toc-jump" href="#二deepseek-专项-今日无-d">二</a></td><td>DeepSeek 专项 —— <strong>今日无 D</strong></td><td>背景说明</td></tr><tr><td><a class="toc-jump" href="#三今日-15-条精选">三</a></td><td>今日 15 条精选（AI Coding 8 + 具身智能 7）</td><td>15 条</td></tr><tr><td><a class="toc-jump" href="#四社区快讯待验证--低置信度">四</a></td><td>社区快讯（待验证 / 低置信度）</td><td>6 条</td></tr><tr><td><a class="toc-jump" href="#五截至今日-ai-多项能力评分表三口径交叉验证">五</a></td><td>能力评分与价格表（三口径交叉验证）</td><td>3 张表 + 性价比</td></tr><tr><td><a class="toc-jump" href="#六github-当日趋势榜开源生态风向标">六</a></td><td>GitHub 当日趋势榜</td><td>日榜 + 周榜</td></tr><tr><td><a class="toc-jump" href="#八ai-社会效益对社会运行与公共福祉的影响">八</a></td><td>AI 社会效益</td><td>6 条</td></tr><tr><td><a class="toc-jump" href="#九ai-经济效益产业价值与资本动向">九</a></td><td>AI 经济效益</td><td>6 条</td></tr><tr><td><a class="toc-jump" href="#十方法论与免责声明">十</a></td><td>方法论与免责声明</td><td>—</td></tr></tbody></table></div>
+<hr>
+<h2 id="一社区信源监控今日一手线索快于媒体">一、社区信源监控（今日一手线索，快于媒体）</h2>
+<p>本节来自三个长期跟踪的社区信源。社区口播往往比媒体稿早 6–24 小时，但<strong>置信度低于官方渠道</strong>，因此本节只做"线索"用途，凡进入第三章「15 条精选」的内容均已用官方或权威媒体二次核验。</p>
+<p><strong>信源状态一览（含字幕提炼要点）</strong></p>
+<table><thead><tr><th>信源</th><th>最新内容</th><th>类型</th><th>字幕</th><th>字幕提炼要点</th><th>时效</th></tr></thead><tbody><tr><td>黑鸦Heya</td><td>AI日报0901（BV1dxt36wEbp）</td><td>资讯类</td><td>✅ 已采集 13 行</td><td>OpenAI 订阅改按 token 计费（Pro $20/月、Max $100/月、含 $300 用量）；Sam Altman 播客称 Astra 用电脑"已达人类水平"；讯飞星火 X2.5 开源（2.5B+1.7B，全国产算力，1M 上下文，API 已上线）</td><td>当日（约 12h 前）</td></tr><tr><td>Icyの狼</td><td>24h 更新 3 条</td><td>个人实验/社区灰测</td><td>✖ 未提取</td><td>个人实验「核摊椅-灰测31连发」(5h前)、社区灰测「ds0831灰测-月球撞地球」、个人向(5h前)；资讯类《V4-Flash-Vision实验版开源》为 08-31（上期已覆盖）</td><td>当日（无资讯类新闻）</td></tr><tr><td>无机酸-_-</td><td>DSV4FVE ocgo 测试（BV1aDth62EJ1）</td><td>个人测评作品</td><td>✖ 未开启字幕</td><td>个人测评作品（测试 DSV4FVE/OpenCode Go 质量），结论不引用</td><td>当日（约数小时前）</td></tr></tbody></table>
+<h3>1.1 黑鸦Heya —— AI日报0901（资讯类，字幕由平台自动生成）</h3>
+<p>从口播正文里提取到的<strong>实质信息</strong>（已做同音字校正，例如 "sam ottoman" → Sam Altman、"ESTRA" → Astra、"欧拉玛" → OpenAI、"星火X" → 星火 X2.5），其中<strong>标题层看不到的增量</strong>（字幕提炼要点）包括：</p>
+<ol><li><strong>OpenAI 订阅套餐改为按 token 计费</strong>：Pro 月付 20 美元、Max 月付 100 美元、含 300 美元用量，老用户可随时升级至新计费方式——直接改写智能体经济账本。</li><li><strong>Sam Altman 播客称 Astra「用电脑已达人类水平」</strong>：口播援引 OpenAI CEO 在一期播客中的表述，指向 Agent 在计算机操作上的能力跃迁。</li><li><strong>讯飞星火 X2.5 开源</strong>：口播确认星火 X2.5 开源 2.5B 与 1.7B 两款模型，基于全国产算力平台训练，原生支持最长 100 万 token 上下文，对应模型 API 已上线——国产小尺寸开源模型再添一员。</li></ol>
+<blockquote><p><strong>来源</strong>：B 站 UP 主「黑鸦Heya」AI日报0901（BV1dxt36wEbp），字幕由平台自动生成，本节为要点摘录与同音字校正后的转述。</p><p><strong>时效</strong>：当日（约 12h 前）。<strong>置信度</strong>：<span class="tag t-prob">🟡 大概率属实</span>（OpenAI token 计费与星火 X2.5 开源为口播线索，需官方/媒体二次核验；Astra 表述为 Altman 播客口径）。</p></blockquote>
+<h3>1.2 Icyの狼 —— 24h 有更新但为个人实验 / 社区灰测类</h3>
+<ul><li>内容：过去 24 小时（截至 09-02 07:40）发布多条视频，但均为<strong>个人实验 / 社区灰测</strong>性质——「核摊椅-灰测31连发：demos站灰测展示」(约 5h 前)、「ds0831灰测-月球撞地球」(当日，单源未证实的社区传言)、以及一条个人向视频 (约 5h 前)。其资讯类「[狼狼快报]V4-Flash-Vision实验版开源-期待第三方部署」(BV1AUt86cEoD) 为 08-31，上期已覆盖。</li><li><strong>来源</strong>：B 站 UP 主「Icyの狼」。<strong>时效</strong>：当日。<strong>置信度</strong>：<span class="tag t-pend">🔴 待验证</span>（灰测/传言类，非权威信源）。</li></ul>
+<h3>1.3 无机酸-_- —— 24h 更新为个人测评作品，未开字幕</h3>
+<ul><li>内容：过去 24 小时发布「DSV4FVE ocgo：OpenCodeGo的降智究竟有多严重？AI六项能力测试」(BV1aDth62EJ1，当日)，属个人测评作品（评测 DSV4FVE 与 OpenCode Go 的质量退化）。</li><li>该视频未开启平台自动字幕，且为<strong>个人测评作品</strong>，按既定流程仅采用标题级信息、不转述测评结论，避免把 UP 主主观判断包装成客观事实。</li><li><strong>来源</strong>：B 站 UP 主「无机酸-_-」。<strong>时效</strong>：当日。<strong>置信度</strong>：🟡 标题级可信，结论未采集。</li></ul>
+<p><strong>社区交叉验证</strong>：黑鸦Heya 字幕补足了「OpenAI 订阅改 token 计费」「讯飞星火 X2.5 开源」「Astra 达人类水平」三处媒体尚未集中覆盖的增量，与第三章第 1、4 条（Claude Fable 5.1）及社区快讯形成互补；Icyの狼与无机酸-_- 的 24h 更新均属个人实验/测评，未构成可独立验证的行业新闻，故未进入正式条目。</p>
+<hr>
+<h2 id="二deepseek-专项-今日无-d">二、DeepSeek 专项 今日无 D</h2>
+<p>过去 24 小时（9/1–9/2）<strong>未检索到 DeepSeek 原生重大新动态</strong>（无新模型、无新融资/IPO、无重大开源），故本期判定为 <strong>今日无 D</strong>。</p>
+<p><strong>24h 窗口内的仅有的关联内容（均非原生重大新闻）</strong>：</p>
+<ul><li><strong>微信支付 9/1 接入 DeepSeek Harness 生态</strong>：微信支付 AI 专属卡新增支持 DeepSeek Harness + OpenClaw（700+ Pay Skill），属第三方生态接入，非 DeepSeek 原生发布（来源：IT时代网/凤凰网 9/1）。</li><li><strong>网易 9/2 财务分析长文</strong>：《前七月收入不足5亿、算力花110亿》是对 <strong>8/31 InfoQ 已披露内部财务数据</strong>（营收 4.75 亿、净亏 7.15 亿、算力投入 110 亿、API 毛利 82.9%、8/17 峰谷调价）的二次解读，并非 9/1–9/2 的新披露。</li></ul>
+<p><strong>上期（8/31–9/1）已覆盖、本期不再重复的重大 DeepSeek 事件</strong>：V4-Flash-Vision-Exp 多模态权重开源（8/31）、二轮融资/估值（8/31）、前七月财务数据（8/31 InfoQ 首发）。如读者需回顾，请见《AI日报_2026-09-01》。</p>
+<hr>
+<h2 id="三今日-15-条精选">三、今日 15 条精选</h2>
+<h3>甲组 · AI Coding（8 条）</h3>
+<h4>1. Anthropic 发布 Claude Fable 5.1 / Mythos 5.1，Fable 5.1 成 Claude Code 默认模型并大幅降价</h4>
+<ul><li><strong>事件</strong>：Anthropic 9/1 前后发布 <strong>Claude Fable 5.1</strong> 与 <strong>Claude Mythos 5.1</strong>（HN 热帖 69 点）；Claude Code v2.1.257 将默认模型切到 <strong>Fable 5.1</strong>，支持 1M 上下文，缓存读取价从 $1.00 降至 $0.25/Mtok（降 75%），并强化 Auto 模式安全边界（拦截云元数据窃取、跨租户访问）。LiveBench 综合 <strong>83.4（Fable 5.1 Max Effort）居全球第一</strong>。</li><li><strong>为何值得关注</strong>：Fable 系列是 Anthropic 的编程主力模型，默认模型切换 + 缓存降价直接改写长程 Agent 会话的经济账本；Cognition 同步将 Fable 5.1 接入 Devin，成本较此前降 54%。</li><li><strong>来源</strong>：Anthropic 官方 / Hacker News / Havoptic（2026-09-01）。<strong>时效</strong>：当日。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>。</li></ul>
+<h4>2. GitHub Copilot 9/1 大调整：旧模型弃用 + xAI Grok 4.6 入驻</h4>
+<ul><li><strong>事件</strong>：9/1 起 Copilot 弃用 Gemini 3.1 Pro、Claude Opus 4.5/4.6、Sonnet 4.5 等旧模型，并逐步开放 <strong>xAI Grok 4.6</strong> 为可选模型（企业/商业版需管理员手动开启策略）；同时重新开放信用卡/PayPal 计费的 Business/Enterprise 注册。</li><li><strong>为何值得关注</strong>：模型 pinned 工作流需重基线，且 xAI 模型首次进入 Copilot 主流入口，编程模型供给侧竞争继续白热化。</li><li><strong>来源</strong>：Oday Bakkour roundup / Zinbiel Brief / daily.dev（2026-09-01）。<strong>时效</strong>：当日。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>。</li></ul>
+<h4>3. Meta Muse Code 正式版（结束 Beta）</h4>
+<ul><li><strong>事件</strong>：Muse Code 出 Beta，新增会话间消息传递、多智能体 Workflow 编排、Rewind 回退与 TypeScript SDK 预览，推出 $5/$15/$50 三档订阅（底层仍为 Muse Spark 1.2）。</li><li><strong>为何值得关注</strong>：第四家闭源大厂下场做终端编程智能体，竞争从"模型能力"转向"harness 成熟度"与多智能体编排。</li><li><strong>来源</strong>：Meta Developer Blog（Claire Zhou，2026-08-31；主流媒体 9/1 报道）。<strong>时效</strong>：近 2 日。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>。</li></ul>
+<h4>4. OpenAI Codex CLI v0.152.0 + 桌面端捆绑完整运行时</h4>
+<ul><li><strong>事件</strong>：OpenAI 9/1 发布 <strong>Codex CLI v0.152.0</strong>（Vim 式 <code>/</code> <code>?</code> 搜索、限流横幅、包式 MCP 命名与单工具输出上限）；同日 Simon Willison 披露 <strong>Codex 桌面 App 在缓存目录捆绑完整 Python + Node.js + LibreOffice 运行时</strong>（含调用这些运行时的 skill）。</li><li><strong>为何值得关注</strong>：CLI 体感与 MCP 安全治理能力补齐，贴近日常开发流；桌面端自带完整运行时意味着 Agent 可在本地直接执行文档/表格/代码任务，自执行闭环进一步夯实。</li><li><strong>来源</strong>：Havoptic / Simon Willison's Weblog（2026-09-01）。<strong>时效</strong>：当日。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>。</li></ul>
+<h4>5. Google Antigravity CLI 新增 /boost 深度推理模式</h4>
+<ul><li><strong>事件</strong>：Google 的 Antigravity 编程智能体加入 <code>/boost</code> 指令，切到更深推理档处理难题，呼应 Claude Code <code>/effort</code>、Codex 推理档的品类趋同。</li><li><strong>为何值得关注</strong>："显式思考档位"已成为编程智能体设计范式——用户可就难度显式分配算力，是 Agent 可控性的重要进步。</li><li><strong>来源</strong>：AI Digest MOC（含 Antigravity 文档 / HN，2026-09-01）。<strong>时效</strong>：当日。<strong>置信度</strong>：<span class="tag t-prob">🟡 大概率属实</span>。</li></ul>
+<h4>6. 腾讯开源 Cube Sandbox 智能体代码运行时</h4>
+<ul><li><strong>事件</strong>：腾讯开源 <strong>Cube Sandbox</strong>，轻量级运行时供智能体自行执行代码，定位"首日可用的原型"，但在数百并发任务时会崩溃。</li><li><strong>为何值得关注</strong>：开源沙箱补齐 Agent 自执行闭环，利于私有化部署与评测；国产大厂在 Agent 基础设施层的开源投入持续加码。</li><li><strong>来源</strong>：AGI Hunt Daily（2026-09-01）。<strong>时效</strong>：当日。<strong>置信度</strong>：<span class="tag t-prob">🟡 大概率属实</span>。</li></ul>
+<h4>7. Beads v1.3.0-rc.1：从单进程追踪器转向多智能体 substrate</h4>
+<ul><li><strong>事件</strong>：Beads 发布首个经测的主分支版本，提供 41 个 OpenAPI 操作的 HTTP API、基于工作租约（lease）的多智能体协调与心跳回收。</li><li><strong>为何值得关注</strong>：把 Agent 协调能力下沉为可被外部编排的基础设施，是"模型只是大脑、Harness 才是身体"工程化的又一步。</li><li><strong>来源</strong>：AI Digest MOC（2026-08-31）。<strong>时效</strong>：近 2 日。<strong>置信度</strong>：<span class="tag t-prob">🟡 大概率属实</span>。</li></ul>
+<h4>8. Cognition 将 Fable 5.1 接入 Devin，成本降 54%</h4>
+<ul><li><strong>事件</strong>：Cognition 9/1 将 <strong>Claude Fable 5.1</strong> 接入其编程 Agent Devin，宣称以 Fable 级智能实现较前代 <strong>54% 更低的成本</strong>，并通过改进 Fusion 路由在降成本同时保持性能（较此前降 47%）。</li><li><strong>为何值得关注</strong>：第三方 Agent 厂商用上新旗舰模型即带来一半左右成本下降，印证"新模型 + 更聪明路由"是 AI Coding 降本的主路径。</li><li><strong>来源</strong>：X (@cognition，2026-09-01，经 Frontier Daily 汇编）。<strong>时效</strong>：当日。<strong>置信度</strong>：<span class="tag t-prob">🟡 大概率属实</span>（厂商自述）。</li></ul>
+<h3>乙组 · 具身智能（7 条）</h3>
+<h4>9. 小鹏机器人（Dogotix）首轮超 9 亿美元融资，估值 63 亿美元</h4>
+<ul><li><strong>事件</strong>：小鹏旗下人形机器人业务完成首轮<strong>超 9 亿美元</strong>融资（IDG 领投，腾讯、阿里战略入局），投后估值<strong>超 63 亿美元（约 430 亿元）</strong>，刷新中国具身智能单轮私募纪录；计划年底量产 IRON、2027 年交付。</li><li><strong>为何值得关注</strong>：车企跨界"物理 AI"成资本新范式，万卡算力集群构筑壁垒；小鹏以自研图灵芯片 + 端侧基座模型的路线，是车企阵营里对 AI 侧押注最重的一家。</li><li><strong>来源</strong>：新浪财经 / 网易（2026-09-01）。<strong>时效</strong>：近 2 日。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>。</li></ul>
+<h4>10. Sharpa（禾赛创始团队）融资约 45 亿元，上海开出全自动机器人餐厅</h4>
+<ul><li><strong>事件</strong>：Sharpa 获阿里、美团、腾讯、京东等投资<strong>超 45 亿元（约 6.7 亿美元）</strong>，投后估值 33 亿美元；同步在上海吴江路开出<strong>全球首家全自主人形机器人餐厅</strong>（10:00–22:00 运营）。</li><li><strong>为何值得关注</strong>：具身智能从演示走向真实商业环境长周期运营的标志性案例，验证了"数据喂模型、模型控本体"在服务场景的闭环。</li><li><strong>来源</strong>：Techflier（2026-09-01）。<strong>时效</strong>：近 2 日。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>。</li></ul>
+<h4>11. 特斯拉 Optimus 确认弗里蒙特产线极低速量产</h4>
+<ul><li><strong>事件</strong>：原 Model S/X 产线已改造为 Optimus 专用线，8 月下旬极低速投产，首批仅供内部"Optimus Academy"训练与采集数据，对外销售或延至 2027 年底。</li><li><strong>为何值得关注</strong>：全球最受关注的人形机器人量产爬坡正式启动，但良率/续航仍存硬约束，给行业设定了"先内部数据闭环、再对外交付"的现实节奏。</li><li><strong>来源</strong>：搜狐（2026-09-01）。<strong>时效</strong>：近 2 日。<strong>置信度</strong>：<span class="tag t-prob">🟡 大概率属实</span>。</li></ul>
+<h4>12. 优必选上半年人形机器人销量 16123 台，U1 系列 9/16 启动交付</h4>
+<ul><li><strong>事件</strong>：2026 H1 营收 <strong>12.7 亿元（+104.2%）</strong>，全尺寸具身智能人形机器人收入 <strong>5.9 亿元（+1445%）</strong>，U1 系列订单破 <strong>1.3 万台</strong>、<strong>9 月 16 日首交</strong>，自贡产线提前一年量产，毛利升至 44.7%。</li><li><strong>为何值得关注</strong>：消费级人形机器人规模化交付拐点临近，真实订单与交付数据给"具身智能从故事走向兑现"提供了最硬的可核验证据。</li><li><strong>来源</strong>：新浪财经 / 华夏时报（2026-09-01）。<strong>时效</strong>：近 2 日。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>。</li></ul>
+<h4>13. 玄创机器人完成数千万元 A1 轮（特危化工业具身智能）</h4>
+<ul><li><strong>事件</strong>：聚焦油气、化工、核电等特种场景，自研 XBOT-AEGIS 三层解耦架构，已向中石油、万华化学交付多台套；前海方舟、西湖科创投连续加注。</li><li><strong>为何值得关注</strong>：高危工业场景具身落地，安全冗余毫秒级拦截异常指令；本期唯一给出明确交付速率（月均稳定交付 + 在手订单破亿）的特危化工业具身公司。</li><li><strong>来源</strong>：网易 / 潮涌 AI（2026-09-01）。<strong>时效</strong>：近 2 日。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>。</li></ul>
+<h4>14. 芯雀科技完成数千万元种子轮融资</h4>
+<ul><li><strong>事件</strong>：具身智能初创（2026 年 6 月成立）获产业资本种子轮，聚焦通用机器人软硬件一体与轻量化具身大模型，攻坚人形机器人核心技术痛点。</li><li><strong>为何值得关注</strong>：2026 年开年国内具身智能融资已超 30 起、总额约 200 亿元，赛道持续升温，早期项目仍获产业资本加注。</li><li><strong>来源</strong>：今日头条（2026-08-31）。<strong>时效</strong>：本周。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>。</li></ul>
+<h4>15. 智元 / 银河通用量产交付提速</h4>
+<ul><li><strong>事件</strong>：智元累计下线突破 <strong>15000 台</strong>通用具身机器人；银河通用智慧药房已在全国近百家药店部署、累计拣药超 100 万盒，并在宁德时代 7×24 小时作业。</li><li><strong>为何值得关注</strong>：头部厂商从"造出来"迈向"用得好"，真实场景规模化运营验证——这是具身智能价值兑现的最关键一环。</li><li><strong>来源</strong>：搜狐《8 月机器人月报》（2026-09-01）。<strong>时效</strong>：近 2 日。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>。</li></ul>
+<hr>
+<h2 id="四社区快讯待验证--低置信度">四、社区快讯（待验证 / 低置信度）</h2>
+<p>以下条目来自社区讨论或单一信源，<strong>尚未获得官方或多方核验</strong>，仅作趋势参考，不建议作为决策依据。</p>
+<table><thead><tr><th>#</th><th>内容</th><th>来源类型</th><th>时效</th><th>置信度</th></tr></thead><tbody><tr><td>Q1</td><td>微信支付 9/1 接入 DeepSeek Harness + OpenClaw 生态（700+ Pay Skill），属第三方生态接入</td><td>媒体报道，非 DeepSeek 原生</td><td>当日</td><td><span class="tag t-pend">🔴 待验证</span></td></tr><tr><td>Q2</td><td>Icyの狼社区灰测「ds0831灰测-月球撞地球」称 DeepSeek 8/31 灰度测试，单源未证实</td><td>B 站社区灰测，单源</td><td>当日</td><td><span class="tag t-pend">🔴 待验证</span></td></tr><tr><td>Q3</td><td>讯飞星火 X2.5 开源（2.5B+1.7B，全国产算力，1M 上下文）——黑鸦Heya 字幕线索，待官方/媒体核验</td><td>B 站字幕线索</td><td>当日</td><td><span class="tag t-prob">🟡 大概率属实</span></td></tr><tr><td>Q4</td><td>美国拟出台远程算力出口管制草案，DeepSeek 被列为目标之一（草案未定稿，延续 8/29 发酵）</td><td>媒体报道</td><td>本周</td><td><span class="tag t-pend">🔴 待验证</span></td></tr><tr><td>Q5</td><td>Kimi 冲刺港股 IPO</td><td>财经媒体</td><td>本周</td><td><span class="tag t-prob">🟡 大概率属实</span></td></tr><tr><td>Q6</td><td>长鑫 LPDDR6 进入量产</td><td>产业链消息</td><td>本周</td><td><span class="tag t-prob">🟡 大概率属实</span></td></tr></tbody></table>
+<blockquote><p>另有社区口播提到的"某厂商推出用于评估和改进其他 Skill 的 Skill"，本期未获新核验，暂不单列。</p></blockquote>
+<hr>
+<h2 id="五截至今日-ai-多项能力评分表三口径交叉验证">五、截至今日 AI 多项能力评分表（三口径交叉验证）</h2>
+<p>三个口径的方法论差异很大，<strong>不可直接横向比较分值</strong>，只能各自看排序：</p>
+<ul><li><strong>口径 A · LiveBench</strong>：抗污染动态基准（2026-06-25 发布，实时榜，2026-09-02 直采）。本表含官方「每成功任务成本」，七大类为官方原始分类。</li><li><strong>口径 B · Artificial Analysis</strong>：智能指数 v4.1.1，多基准加权合成。<strong>今日官网实时表格未能成功抓取，行级数值沿用 8/30 快照（以官方页面为准）</strong>。</li><li><strong>口径 C · llm-stats</strong>：覆盖 369 个模型（2026-09-02 实时抓取），侧重 LLM Stats Score + 混合价 + 吞吐。混合价 = (输入价 × 3 + 输出价) / 4。</li></ul>
+<h3>5.1 口径 A · LiveBench 实时榜（Top 20 / 共 50+ 款，2026-09-02 直采）</h3>
+<div class="scroll"><table><thead><tr><th>#</th><th>模型</th><th>综合</th><th>推理</th><th>编程</th><th>Agent编程</th><th>数学</th><th>数据分析</th><th>语言</th><th>指令跟随</th><th>每成功任务成本</th></tr></thead><tbody><tr><td>1</td><td>Claude Fable 5.1 Max Effort</td><td><strong>83.4</strong></td><td>91.7</td><td>86.4</td><td>66.1</td><td>97.0</td><td>80.3</td><td>89.5</td><td>73.0</td><td>$1.212</td></tr><tr><td>2</td><td>Claude Fable 5 Max Effort</td><td>83.0</td><td>89.7</td><td>86.0</td><td>62.2</td><td>96.0</td><td>80.5</td><td>90.7</td><td>75.8</td><td>$1.439</td></tr><tr><td>3</td><td>GPT-5.6 Sol Max Effort</td><td>81.0</td><td>91.7</td><td>83.9</td><td>56.2</td><td>96.2</td><td>79.8</td><td>87.7</td><td>71.8</td><td>$0.515</td></tr><tr><td>4</td><td>GPT-5.5 Thinking xHigh Effort</td><td>80.2</td><td>89.7</td><td>82.1</td><td>54.0</td><td>95.9</td><td>81.6</td><td>87.4</td><td>70.7</td><td>$0.435</td></tr><tr><td>5</td><td>Claude 5 Opus Thinking Max Effort</td><td>80.1</td><td>91.2</td><td>81.4</td><td><strong>65.2</strong></td><td>95.7</td><td>74.6</td><td>88.7</td><td>63.8</td><td>$0.699</td></tr><tr><td>6</td><td>Kimi K3 (开源)</td><td>79.2</td><td>90.7</td><td>81.4</td><td>62.2</td><td>84.4</td><td>78.7</td><td>85.5</td><td>71.4</td><td>$0.348</td></tr><tr><td>7</td><td>Gemini 3.7 Flash High</td><td>78.8</td><td>87.8</td><td>78.9</td><td>58.3</td><td>93.5</td><td>68.0</td><td>85.5</td><td>79.9</td><td>$0.157</td></tr><tr><td>8</td><td>Qwen 3.8 Max (开源)</td><td>78.5</td><td>88.2</td><td>72.9</td><td>64.6</td><td>91.3</td><td>78.4</td><td>79.7</td><td>74.1</td><td>$0.275</td></tr><tr><td>9</td><td>Grok 4.6</td><td>78.0</td><td>90.5</td><td>76.8</td><td>57.0</td><td>92.6</td><td>73.9</td><td>83.7</td><td>71.9</td><td>$0.207</td></tr><tr><td>10</td><td>GPT-5.4 Thinking xHigh Effort</td><td>78.0</td><td>88.1</td><td>77.5</td><td>53.8</td><td>94.1</td><td>79.3</td><td>82.6</td><td>70.2</td><td>$0.387</td></tr><tr><td>11</td><td>Muse Spark 1.2 xHigh Effort</td><td>78.0</td><td>90.0</td><td>77.5</td><td>57.6</td><td>91.2</td><td>76.5</td><td>78.6</td><td>74.3</td><td>$0.375</td></tr><tr><td>12</td><td>GPT-5.6 Terra Max Effort</td><td>77.9</td><td>90.6</td><td>78.2</td><td>54.9</td><td>94.9</td><td>79.3</td><td>82.9</td><td>64.6</td><td>$0.352</td></tr><tr><td>13</td><td><strong>DeepSeek V4 Pro 0813 (开源)</strong></td><td><strong>77.4</strong></td><td>85.8</td><td>77.2</td><td>54.9</td><td>95.1</td><td>79.2</td><td>82.1</td><td>67.7</td><td><strong>$0.044</strong></td></tr><tr><td>14</td><td>Gemini 3.1 Pro Preview High</td><td>77.0</td><td>84.0</td><td>76.5</td><td>44.1</td><td>91.0</td><td>78.5</td><td>85.4</td><td>79.1</td><td>$0.286</td></tr><tr><td>15</td><td><strong>DeepSeek V4 Flash Vision Exp (开源)</strong></td><td>76.8</td><td>85.4</td><td>68.2</td><td><strong>65.1</strong></td><td>87.8</td><td>79.5</td><td>80.4</td><td>71.0</td><td><strong>$0.051</strong></td></tr><tr><td>16</td><td>Claude 4.7 Opus Thinking xHigh Effort</td><td>76.5</td><td>87.2</td><td>82.1</td><td>50.7</td><td>92.9</td><td>78.3</td><td>77.9</td><td>66.7</td><td>$0.528</td></tr><tr><td>17</td><td>Claude 4.8 Opus Thinking Max Effort</td><td>76.2</td><td>89.2</td><td>81.8</td><td>50.5</td><td>94.3</td><td>66.0</td><td>79.7</td><td>72.0</td><td>$0.983</td></tr><tr><td>18</td><td>Qwen 3.8 Flash Next (开源)</td><td>76.2</td><td>87.4</td><td>72.6</td><td>61.6</td><td>85.8</td><td>74.2</td><td>74.6</td><td>77.1</td><td>$0.042</td></tr><tr><td>19</td><td><strong>GLM-5.3 (开源)</strong></td><td>76.1</td><td>85.8</td><td>79.0</td><td>60.9</td><td>87.9</td><td>70.2</td><td>79.9</td><td>69.3</td><td>$0.450</td></tr><tr><td>20</td><td>Claude Sonnet 5 xHigh</td><td>76.0</td><td>88.7</td><td>80.7</td><td>59.4</td><td>92.9</td><td>71.7</td><td>75.0</td><td>63.9</td><td>$0.505</td></tr></tbody></table></div>
+<p><strong>编程类单项拔尖（不看总分）</strong>：<code>Claude Fable 5.1 Max Effort</code> 综合 83.4 居首、<code>Claude Fable 5 Max Effort</code> 编程 86.0 为全场最高；<code>DeepSeek V4 Flash Vision Exp</code>（#15）Agent 编程 <strong>65.1</strong> 是多模态模型中罕见的 Agent 编程高分。<strong>DeepSeek V4 Pro 0813 每成功任务成本 $0.044、V4 Flash Vision Exp $0.051</strong>，分别为榜首 Fable 5.1（$1.212）的 1/28 与 1/24——成本维度断层领先。<strong>Agent 编程是全场最弱环节</strong>：最高仅 <code>Claude 5 Opus Thinking Max Effort</code> 的 65.2，中位数约 54，说明多语言 Agent 化编程仍是明确的能力洼地。</p>
+<details>
+<summary>展开：开源模型在 LiveBench 的位置与每成功任务成本</summary>
+<table><thead><tr><th>#</th><th>模型</th><th>综合</th><th>编程</th><th>Agent编程</th><th>每成功任务成本</th><th>备注</th></tr></thead><tbody><tr><td>13</td><td>DeepSeek V4 Pro 0813</td><td>77.4</td><td>77.2</td><td>54.9</td><td>$0.044</td><td>开源最高，成本极低</td></tr><tr><td>15</td><td>DeepSeek V4 Flash Vision Exp</td><td>76.8</td><td>68.2</td><td>65.1</td><td>$0.051</td><td>多模态 Agent 编程拔尖</td></tr><tr><td>19</td><td>GLM-5.3</td><td>76.1</td><td>79.0</td><td>60.9</td><td>$0.450</td><td>开源第一梯队</td></tr><tr><td>18</td><td>Qwen 3.8 Flash Next</td><td>76.2</td><td>72.6</td><td>61.6</td><td>$0.042</td><td>开源小尺寸</td></tr><tr><td>6</td><td>Kimi K3</td><td>79.2</td><td>81.4</td><td>62.2</td><td>$0.348</td><td>开源综合最高</td></tr><tr><td>8</td><td>Qwen 3.8 Max</td><td>78.5</td><td>72.9</td><td>64.6</td><td>$0.275</td><td>开源</td></tr><tr><td>21</td><td>GLM-5.3 Flash</td><td>71.6</td><td>79.0</td><td>56.8</td><td><strong>$0.031</strong></td><td>编程 79.0 与旗舰持平，成本全场最低</td></tr></tbody></table>
+<p><strong>关键发现</strong>：<code>GLM-5.3-Flash</code> 的<strong>编程分 79.0 与旗舰 GLM-5.3 完全持平</strong>，但每成功任务成本仅 $0.031（全场最低），是纯编程任务的极高性价比选择。</p>
+</details>
+<h3>5.2 口径 B · Artificial Analysis 智能指数（Top 24 / 共 250+ 款，v4.1.1 快照）</h3>
+<blockquote><p>⚠️ 今日（9/2）Artificial Analysis 官网实时表格未能成功抓取，以下行级数值<strong>沿用 v4.1.1 快照（页面最后更新 8/30）</strong>，仅排序参考，以官方页面为准。</p></blockquote>
+<div class="scroll"><table><thead><tr><th>#</th><th>模型</th><th>厂商</th><th>智能指数</th><th>吞吐(t/s)</th><th>首字延迟(s)</th><th>每任务成本</th></tr></thead><tbody><tr><td>1</td><td>Claude Opus 5 (max)</td><td>Anthropic</td><td><strong>63</strong></td><td>56</td><td>59.51</td><td>$2.34</td></tr><tr><td>1</td><td>Claude Opus 5 (xhigh)</td><td>Anthropic</td><td>63</td><td>54</td><td>26.68</td><td>$1.80</td></tr><tr><td>3</td><td>Claude Fable 5</td><td>Anthropic</td><td>62</td><td>62</td><td>92.73</td><td>$3.14</td></tr><tr><td>4</td><td>Claude Opus 5 (high)</td><td>Anthropic</td><td>61</td><td>54</td><td>20.31</td><td>$1.23</td></tr><tr><td>4</td><td>GPT-5.6 Sol (max)</td><td>OpenAI</td><td>61</td><td>75</td><td>153.94</td><td>$0.95</td></tr><tr><td>4</td><td>Grok 4.6 (high)</td><td>SpaceXAI</td><td>61</td><td>59</td><td>42.59</td><td>$0.94</td></tr><tr><td>7</td><td>Grok 4.6 (xhigh)</td><td>SpaceXAI</td><td>60</td><td>58</td><td>39.75</td><td>$1.23</td></tr><tr><td>7</td><td><strong>Kimi K3 (max)</strong></td><td>Kimi</td><td>60</td><td>39</td><td>4.03</td><td>$0.84</td></tr><tr><td>7</td><td><strong>GLM-5.3 (max)</strong></td><td>Z AI</td><td><strong>60</strong></td><td>67</td><td><strong>1.63</strong></td><td>$0.68</td></tr><tr><td>10</td><td>GPT-5.6 Sol (xhigh)</td><td>OpenAI</td><td>59</td><td>79</td><td>52.39</td><td>$0.63</td></tr><tr><td>10</td><td>Grok 4.6 (medium)</td><td>SpaceXAI</td><td>59</td><td>59</td><td>33.90</td><td>$0.78</td></tr><tr><td>10</td><td>Claude Opus 5 (medium)</td><td>Anthropic</td><td>59</td><td>52</td><td>4.19</td><td>$0.72</td></tr><tr><td>13</td><td>Qwen3.8 Max</td><td>Alibaba</td><td>58</td><td>25</td><td>2.57</td><td>$0.91</td></tr><tr><td>13</td><td>Qwen3.8 2.4T A95B</td><td>Alibaba</td><td>58</td><td>28</td><td>2.54</td><td>$0.81</td></tr><tr><td>15</td><td><strong>GLM-5.3-Flash</strong></td><td>Z AI</td><td>57</td><td>49</td><td>1.50</td><td><strong>$0.09</strong></td></tr><tr><td>15</td><td>GPT-5.6 Sol (high)</td><td>OpenAI</td><td>57</td><td>73</td><td>20.01</td><td>$0.43</td></tr><tr><td>15</td><td>Muse Spark 1.2 (xhigh)</td><td>Meta</td><td>57</td><td>—</td><td>—</td><td>$0.40</td></tr><tr><td>15</td><td>GPT-5.6 Terra (max)</td><td>OpenAI</td><td>57</td><td>110</td><td>143.38</td><td>$0.53</td></tr><tr><td>19</td><td>Gemini 3.7 Flash (high)</td><td>Google</td><td>56</td><td><strong>330</strong></td><td>9.35</td><td>$0.40</td></tr><tr><td>19</td><td>Qwen3.8-Flash-Next</td><td>Alibaba</td><td>56</td><td>80</td><td>2.79</td><td>$0.10</td></tr><tr><td>19</td><td>Grok 4.5 (high)</td><td>SpaceXAI</td><td>56</td><td>53</td><td>14.51</td><td>$0.43</td></tr><tr><td>23</td><td>Claude Sonnet 5 (max)</td><td>Anthropic</td><td>55</td><td>86</td><td>207.94</td><td>$1.72</td></tr><tr><td>24</td><td><strong>DeepSeek V4 Pro 0813 (max)</strong></td><td>DeepSeek</td><td>53</td><td>72</td><td><strong>1.62</strong></td><td>$0.27</td></tr><tr><td>24</td><td>Gemini 3.7 Flash (medium)</td><td>Google</td><td>53</td><td>332</td><td>4.71</td><td>$0.26</td></tr></tbody></table></div>
+<p><strong>三个值得注意的读数</strong>：</p>
+<ol><li><strong>GLM-5.3 以 60 分并列第 7，是开源模型最高位</strong>，且首字延迟仅 1.63 秒——同档模型里延迟优势巨大（Claude Opus 5 max 59.51s、GPT-5.6 Sol max 153.94s）。</li><li><strong>GLM-5.3-Flash 57 分 / 每任务 $0.09</strong>，与 GPT-5.6 Sol (high) 同分但成本约 1/5。</li><li><strong>国产模型延迟集体占优</strong>：GLM 系 1.5–1.6s、DeepSeek 系 1.28–1.65s、Qwen 系 2.5–2.8s，而 Claude/GPT 顶配档普遍数十到 200 秒。<strong>交互式编程场景延迟权重远高于分数</strong>。</li></ol>
+<h3>5.3 口径 C · llm-stats 综合分 + 混合价（Top 15 / 共 369 款，2026-09-02）</h3>
+<div class="scroll"><table><thead><tr><th>#</th><th>模型</th><th>综合分</th><th>混合价/M</th><th>吞吐</th><th>开源</th><th>标记</th></tr></thead><tbody><tr><td>1</td><td>GPT-5.6 Sol</td><td>56.6</td><td>$7.78</td><td>99 c/s</td><td>—</td><td></td></tr><tr><td>2</td><td>Claude Mythos Preview</td><td>55.6</td><td>—</td><td>—</td><td>—</td><td>未发布</td></tr><tr><td>3</td><td>Claude Opus 5</td><td>55.3</td><td>$7.22</td><td>82 c/s</td><td>—</td><td></td></tr><tr><td>4</td><td>Claude Fable 5</td><td>55.1</td><td>$14.44</td><td>98 c/s</td><td>—</td><td>最贵</td></tr><tr><td>5</td><td>Claude Fable 5.1</td><td>54.8</td><td>$14.44</td><td>—</td><td>—</td><td>NEW</td></tr><tr><td>6</td><td><strong>Kimi K3</strong></td><td>54.5</td><td>$4.33</td><td>87 c/s</td><td>✅</td><td></td></tr><tr><td>7</td><td><strong>GLM-5.3</strong></td><td>54.1</td><td>$1.73</td><td>77 c/s</td><td>✅</td><td></td></tr><tr><td>8</td><td><strong>DeepSeek-V4-Pro-0813</strong></td><td>52.9</td><td><strong>$0.48</strong></td><td><strong>119 c/s</strong></td><td>✅</td><td>吞吐最高</td></tr><tr><td>9</td><td>Qwen3.8 Max</td><td>52.6</td><td>$2.02</td><td>63 c/s</td><td>✅</td><td></td></tr><tr><td>10</td><td>GPT-5.6 Terra</td><td>52.1</td><td>$3.11</td><td>115 c/s</td><td>—</td><td></td></tr><tr><td>11</td><td>Hy4 preview</td><td>51.5</td><td>—</td><td>—</td><td>✅</td><td>NEW</td></tr><tr><td>12</td><td>Claude Opus 4.8</td><td>51.4</td><td>$7.22</td><td>46 c/s</td><td>—</td><td></td></tr><tr><td>13</td><td><strong>GLM-5.3-Flash</strong></td><td>51.1</td><td><strong>$0.19</strong></td><td>80 c/s</td><td>✅</td><td>NEW</td></tr><tr><td>14</td><td>Gemini 3.7 Flash</td><td>50.3</td><td>$1.08</td><td>132 c/s</td><td>—</td><td></td></tr><tr><td>15</td><td>Muse Spark 1.1</td><td>50.2</td><td>$1.58</td><td>256 c/s</td><td>—</td><td></td></tr></tbody></table></div>
+<p>前 15 名中<strong>开源模型占 5 席</strong>（Kimi K3、GLM-5.3、DeepSeek-V4-Pro-0813、GLM-5.3-Flash、Qwen3.8 Max），且全部来自中国团队；本期新增 Claude Fable 5.1（Anthropic）与两款 Flash 模型（Hy4 preview、GLM-5.3-Flash）。</p>
+<h3>5.4 性价比表（Price vs Performance）</h3>
+<p>计算方式：<strong>LiveBench 综合总分 ÷ llm-stats 混合价（$/M token）</strong>。数值越高越划算；末列为归一化占比（以榜首为 100%）。</p>
+<div class="pvp">
+<div class="bar-row"><div class="bar-name ds">GLM-5.3-Flash</div><div class="bar-track"><div class="bar-fill ds" style="width:100.0%"></div></div><div class="bar-val">376.8</div><div class="bar-score">71.6 / $0.19</div></div>
+<div class="bar-row"><div class="bar-name ds">DeepSeek-V4-Pro-0813</div><div class="bar-track"><div class="bar-fill ds" style="width:42.8%"></div></div><div class="bar-val">161.3</div><div class="bar-score">77.4 / $0.48</div></div>
+<div class="bar-row"><div class="bar-name">Gemini 3.7 Flash</div><div class="bar-track"><div class="bar-fill" style="width:19.4%"></div></div><div class="bar-val">73.0</div><div class="bar-score">78.8 / $1.08</div></div>
+<div class="bar-row"><div class="bar-name">Muse Spark 1.1</div><div class="bar-track"><div class="bar-fill" style="width:12.7%"></div></div><div class="bar-val">47.7</div><div class="bar-score">75.3 / $1.58</div></div>
+<div class="bar-row"><div class="bar-name ds">GLM-5.3</div><div class="bar-track"><div class="bar-fill ds" style="width:11.7%"></div></div><div class="bar-val">44.0</div><div class="bar-score">76.1 / $1.73</div></div>
+<div class="bar-row"><div class="bar-name">Qwen3.8 Max</div><div class="bar-track"><div class="bar-fill" style="width:10.3%"></div></div><div class="bar-val">38.9</div><div class="bar-score">78.5 / $2.02</div></div>
+<div class="bar-row"><div class="bar-name">Claude Sonnet 5</div><div class="bar-track"><div class="bar-fill" style="width:7.0%"></div></div><div class="bar-val">26.3</div><div class="bar-score">76.0 / $2.89</div></div>
+<div class="bar-row"><div class="bar-name">GPT-5.6 Terra</div><div class="bar-track"><div class="bar-fill" style="width:6.6%"></div></div><div class="bar-val">25.0</div><div class="bar-score">77.9 / $3.11</div></div>
+<div class="bar-row"><div class="bar-name">Kimi K3</div><div class="bar-track"><div class="bar-fill" style="width:4.9%"></div></div><div class="bar-val">18.3</div><div class="bar-score">79.2 / $4.33</div></div>
+<div class="bar-row"><div class="bar-name">Claude Opus 5</div><div class="bar-track"><div class="bar-fill" style="width:2.9%"></div></div><div class="bar-val">11.1</div><div class="bar-score">80.1 / $7.22</div></div>
+<div class="bar-row"><div class="bar-name">GPT-5.6 Sol</div><div class="bar-track"><div class="bar-fill" style="width:2.8%"></div></div><div class="bar-val">10.4</div><div class="bar-score">81.0 / $7.78</div></div>
+<div class="bar-row"><div class="bar-name">Claude Fable 5</div><div class="bar-track"><div class="bar-fill" style="width:1.5%"></div></div><div class="bar-val">5.7</div><div class="bar-score">83.0 / $14.44</div></div>
+</div>
+<p><strong>结论</strong>：</p>
+<ul><li><strong>能力差 13%，价格差 76 倍。</strong> 榜首 GLM-5.3-Flash（71.6 分）与榜尾 Claude Fable 5（83.0 分）能力差距仅 11.4 分（约 14%），但价格差 76 倍，性价比差 <strong>66 倍</strong>。</li><li><strong>$0.19 与 $0.48 两档是本期性价比断层区</strong>。GLM-5.3-Flash 与 DeepSeek-V4-Pro-0813 的性价比分别是第 3 名的 5.2 倍和 2.2 倍，二者与后续形成明显断层。</li><li><strong>选型建议</strong>：批量代码生成、CI 内嵌审查、大规模离线重构等吞吐/成本敏感任务，优先考虑 GLM-5.3-Flash（编程分 79.0，与旗舰持平）或 DeepSeek-V4-Pro-0813（吞吐 119 c/s 全场最高、每成功任务成本 $0.044）。只有在长程复杂 Agent 任务（Agent 编程列 60+ 才有意义）上，才值得付 Opus 5 / Fable 5 的溢价。</li></ul>
+<hr>
+<h2 id="六github-当日趋势榜开源生态风向标">六、GitHub 当日趋势榜（开源生态风向标）</h2>
+<h3>6.1 日榜要点（2026-09-02 07:39 抓取，AI 趋势榜）</h3>
+<table><thead><tr><th>位次</th><th>项目</th><th>方向</th><th>Stars</th></tr></thead><tbody><tr><td>#1</td><td>openclaw/openclaw</td><td>个人 AI 助手运行时（"龙虾"）</td><td>388.5k</td></tr><tr><td>#2</td><td>deepseek-ai/deepseek-harness</td><td>DeepSeek Agent 框架（"Everything is a Plugin"）</td><td>208.1k</td></tr><tr><td>#3</td><td>n8n-io/n8n</td><td>带原生 AI 能力的工作流自动化</td><td>203.1k</td></tr><tr><td>#4</td><td>Significant-Gravitas/AutoGPT</td><td>自主 Agent 鼻祖</td><td>187.1k</td></tr><tr><td>#5</td><td>f/prompts.chat</td><td>提示词收集（原 Awesome ChatGPT Prompts）</td><td>168.4k</td></tr><tr><td>#6</td><td>langgenius/dify</td><td>Agentic 工作流 / RAG 平台</td><td>154.1k</td></tr><tr><td>#7</td><td>langflow-ai/langflow</td><td>可视化构建部署 AI Agent</td><td>154.0k</td></tr><tr><td>#8</td><td>open-webui/open-webui</td><td>用户友好的 AI 交互界面</td><td>150.6k</td></tr><tr><td>#9</td><td>langchain-ai/langchain</td><td>Agent 工程平台</td><td>145.5k</td></tr><tr><td>#10</td><td>Shubhamsaboo/awesome-llm-apps</td><td>100+ AI Agent / Skill / RAG 应用</td><td>135.6k</td></tr></tbody></table>
+<h3>6.2 周榜要点（2026-09-02 07:40 抓取）</h3>
+<table><thead><tr><th>位次</th><th>项目</th><th>方向</th><th>Stars</th></tr></thead><tbody><tr><td>#1</td><td>openclaw/openclaw</td><td>个人 AI 助手运行时</td><td>388.5k</td></tr><tr><td>#2</td><td>deepseek-ai/deepseek-harness</td><td>DeepSeek Agent 框架</td><td>208.1k</td></tr><tr><td>#3</td><td>n8n-io/n8n</td><td>AI 工作流自动化</td><td>203.1k</td></tr><tr><td>#4</td><td>Significant-Gravitas/AutoGPT</td><td>自主 Agent</td><td>187.1k</td></tr><tr><td>#5</td><td>f/prompts.chat</td><td>提示词收集</td><td>168.4k</td></tr><tr><td>#6</td><td>Snailclimb/JavaGuide</td><td>Java/后端面试指南（含 AI 应用）</td><td>158.2k</td></tr><tr><td>#7</td><td>langgenius/dify</td><td>Agentic 工作流平台</td><td>154.1k</td></tr><tr><td>#8</td><td>langflow-ai/langflow</td><td>AI Agent 构建</td><td>154.0k</td></tr><tr><td>#9</td><td>open-webui/open-webui</td><td>AI 交互界面</td><td>150.6k</td></tr><tr><td>#10</td><td>msitarzewski/agency-agents</td><td>完整 AI agency 工具集</td><td>149.5k</td></tr></tbody></table>
+<h3>6.3 解读</h3>
+<p><strong>日榜与周榜前 10 完全重合（openclaw / deepseek-harness / n8n / AutoGPT / prompts.chat / dify / langflow / open-webui / langchain / awesome-llm-apps），说明 AI Agent 基础设施的热度具备持续性</strong>。两点观察：</p>
+<ol><li><strong>热度重心从"模型"转向"跑模型的壳"</strong>。榜单上没有模型仓库占据高位，占位的全是运行时、工作流、Agent 框架这类中间层——与第三章第 1、4、6、7、8 条（Fable 5.1 / Codex / Cube Sandbox / Beads / Devin）指向同一件事：<strong>Agent 执行层正在标准化，成为独立竞争战场</strong>。</li><li><strong>deepseek-harness 稳居日榜 #2 / 周榜 #2</strong>，与本期「今日无D」形成有趣对照——DeepSeek 原生新闻虽清淡，但其开源 Agent 框架仍是最热的开源项目之一，社区重心在"用 DeepSeek 造 Agent"而非"等 DeepSeek 发新模型"。</li></ol>
+<blockquote><p><strong>来源</strong>：GitHub AI 趋势榜（日榜 / 周榜双周期，2026-09-02 07:39–07:40 抓取，github-ai-trends 脚本）。<strong>时效</strong>：当日。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>（Star 量级为抓取时快照，随时变动）。</p></blockquote>
+<hr>
+<h2 id="八ai-社会效益对社会运行与公共福祉的影响">八、AI 社会效益（对社会运行与公共福祉的影响）</h2>
+<h3>8.1 AI 数智诊疗覆盖县乡村三级（云南弥渡）</h3>
+<p>依托上海交大"兆言/青囊 AI"上线十大诊疗模块，日均调用 <strong>1.1 万次</strong>；影像诊断中心半年远程服务 <strong>7 万+ 患者</strong>（多数来自乡镇）。数据：日均 1.1 万次、7 万+ 远程诊断。</p>
+<p><strong>意义</strong>：AI 医疗从三甲医院下沉到县乡村三级，直接缓解基层优质医疗资源短缺。</p>
+<p><strong>来源</strong>：云南省卫健委（2026-09-01）。<strong>时效</strong>：近 2 日。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>。</p>
+<h3>8.2 江苏徐州丰县村级 AI 医疗"智慧小屋"</h3>
+<p>联通云边一体化方案 + 苏北方言数字人，留守老人足不出村问诊。数据：村级诊断符合率 <strong>94.3%</strong>，单次就诊节约 <strong>150 余元</strong>。</p>
+<p><strong>意义</strong>：方言数字人 + 云边协同把适老化医疗落到村一级，是数字鸿沟的反向填平。</p>
+<p><strong>来源</strong>：中国工信新闻网（2026-09-01）。<strong>时效</strong>：近 2 日。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>。</p>
+<h3>8.3 广东顺德华为 HAIC 医疗 AI 方案</h3>
+<p>软硬一体、1 天部署，覆盖病历生成质控、慢病管理、脑卒中辅助诊疗。数据：问诊效率 <strong>+60%</strong>，病历人工质控负担 <strong>-75%</strong>。</p>
+<p><strong>意义</strong>：把医生从文书与质控中解放，效率与质量同时提升，是可复制的基层医疗新基建。</p>
+<p><strong>来源</strong>：广州日报大洋网（2026-09-01）。<strong>时效</strong>：近 2 日。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>。</p>
+<h3>8.4 顺德 50 万师生"全区同上一堂 AI 课"</h3>
+<p>234 所中小学近 <strong>50 万师生</strong>同享 AI 通识开学第一课，出台三年行动方案构建三阶递进课程体系。数据：234 校、50 万师生、30 所示范校目标。</p>
+<p><strong>意义</strong>：区域级 AI 通识教育规模化落地，是人力资本长期塑造的关键入口。</p>
+<p><strong>来源</strong>：南方+（2026-09-01）。<strong>时效</strong>：近 2 日。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>。</p>
+<h3>8.5 广西柳州"机器人 + 养老"AI 康养驿站</h3>
+<p>4 个 AI 康养驿站试运行，构建"测、算、管、服"闭环，计划扩至 15 个社区。数据：4 个 → 15 个社区。</p>
+<p><strong>意义</strong>：老龄化是具身智能最刚性的社会需求，康养驿站把"测+算+管+服"闭环放到社区，是容错率较高的落地场景。</p>
+<p><strong>来源</strong>：人民网（2026-09-01）。<strong>时效</strong>：近 2 日。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>。</p>
+<h3>8.6 ChatGPT 接入电子健康记录（EHR），供临床医生使用</h3>
+<p>OpenAI 9/1 宣布 ChatGPT 可连接电子健康记录（EHR）与额外行业数据，让临床医生安全获取患者上下文与科研信息。</p>
+<p><strong>意义</strong>：海外头部模型厂把医疗作为高价值垂直场景推进，与本章 8.1–8.3 的国内基层医疗 AI 形成"全球同步、路径不同"的对照；也带来数据安全与合规的新命题。</p>
+<p><strong>来源</strong>：OpenAI 官方博客（2026-09-01，经 Frontier Daily 汇编）。<strong>时效</strong>：当日。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>（官方发布）。</p>
+<hr>
+<h2 id="九ai-经济效益产业价值与资本动向">九、AI 经济效益（产业价值与资本动向）</h2>
+<h3>9.1 国家人工智能基金 14 亿元战略入股快手可灵 AI</h3>
+<p>国家 AI 基金注资 <strong>14 亿元</strong>、正大机器人注资约 <strong>1.31 亿元</strong>；可灵 Q2 营收超 <strong>8.5 亿元（同比 +200%）</strong>，全球用户破 1 亿、覆盖 224 国。</p>
+<p><strong>判断</strong>：国家级产业资本下场加持头部应用，标志 AI 应用层进入"国家队背书 + 商业化验证"双轮阶段。</p>
+<p><strong>来源</strong>：证券时报网（2026-09-01）。<strong>时效</strong>：近 2 日。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>。</p>
+<h3>9.2 VAST 生成式 3D 完成 B/B+ 轮约 30 亿元</h3>
+<p>Tripo 平台文本/图生成 3D，经纬中国领投，半年累计融资约 <strong>4.46 亿美元</strong>，为年内最大 AI 应用融资之一。</p>
+<p><strong>判断</strong>：3D 生成是继文本/图像/视频后的新应用高地，资本在"多模态生成"赛道继续加注。</p>
+<p><strong>来源</strong>：TechStartups（2026-09-01）。<strong>时效</strong>：近 2 日。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>。</p>
+<h3>9.3 中国 AI 算力需求 Q1 同比 +417%，租赁市场全年料 2600 亿</h3>
+<p>算力需求同比 <strong>+417%</strong>、有效供给仅 +128%，缺口扩大；Q1 算力租赁市场 <strong>680 亿元</strong>，全年预计破 <strong>2600 亿</strong>。</p>
+<p><strong>判断</strong>：算力是 AI 经济的"水电"，需求增速远超供给，租赁市场确定性强；但也意味着 DeepSeek 式"110 亿算力基建"重资产压力具有行业普遍性（见第二章背景）。</p>
+<p><strong>来源</strong>：同花顺 / 中国信通院（2026-09-01）。<strong>时效</strong>：近 2 日。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>。</p>
+<h3>9.4 济南 AI 核心产业规模 2026 预计 800 亿元</h3>
+<p>2025 年核心产业 <strong>640 亿元</strong>，2026 预计 <strong>800 亿</strong>；企业近 600 家、年底算力破 1 万 P、数据交易额超 3 亿。</p>
+<p><strong>判断</strong>：区域 GDP 贡献口径出现可量化指标，AI 从"概念"进入"在地产业规模"统计。</p>
+<p><strong>来源</strong>：新黄河（2026-09-01）。<strong>时效</strong>：近 2 日。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>。</p>
+<h3>9.5 协创数据算力业务 H1 营收 32.16 亿（+163%）</h3>
+<p>智能算力产品及服务成核心增长引擎，收入占比由 2.04% 升至 25.68%。</p>
+<p><strong>判断</strong>：算力服务商财报验证需求真实落地，上游"卖铲人"率先兑现收入。</p>
+<p><strong>来源</strong>：上证报（2026-08-30）。<strong>时效</strong>：本周。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>。</p>
+<h3>9.6 算力服务大单频出（行云 30.53 亿 / 高乐 31.95 亿）</h3>
+<p>行云科技合同上调至 <strong>30.53 亿元（+201%）</strong>，高乐股份签 <strong>31.95 亿元（5 年期）</strong>，金刚光伏 6.14 亿元。</p>
+<p><strong>判断</strong>：长周期大单锁定算力需求，行业从"散单"走向"框架协议 + 多年锁量"，供给端扩产有据可依。</p>
+<p><strong>来源</strong>：同花顺（2026-09-01）。<strong>时效</strong>：近 2 日。<strong>置信度</strong>：<span class="tag t-conf">✅ 已确认</span>。</p>
+<hr>
+<h2 id="十方法论与免责声明">十、方法论与免责声明</h2>
+<h3>10.1 信源分层与置信度标记</h3>
+<table><thead><tr><th>标记</th><th>含义</th><th>判定标准</th></tr></thead><tbody><tr><td><span class="tag t-conf">✅ 已确认</span></td><td>官方渠道发布，或 ≥2 个独立权威来源一致</td><td>可作为决策依据</td></tr><tr><td><span class="tag t-prob">🟡 大概率属实</span></td><td>单一权威来源，或官方事实明确但细节为媒体口径</td><td>需自行核验细节</td></tr><tr><td><span class="tag t-pend">🔴 待验证</span></td><td>社区流传 / 单一非权威来源 / 文书未公开</td><td>仅作趋势参考</td></tr></tbody></table>
+<p>社区信源（第一章）用于<strong>抢时间</strong>，其内容凡进入第三章「15 条精选」的，均已用官方或权威媒体二次核验；未能核验的降级至第四章「社区快讯」。</p>
+<h3>10.2 B 站字幕采集口径</h3>
+<ul><li>字幕由平台自动生成，存在同音字与专有名词错误。已做人工同音字校正（如 "sam ottoman" → Sam Altman、"ESTRA" → Astra、"欧拉玛" → OpenAI、"星火X" → 星火 X2.5），但<strong>不排除仍有残留错误</strong>。</li><li><strong>区分资讯类与个人评测作品</strong>：资讯类（如 AI 日报）可摘录事实要点；个人评测作品（如无机酸-_- 的六项能力测试）的<strong>结论不予转述</strong>，避免把 UP 主主观判断包装成客观事实。</li><li>未开启自动字幕的视频，<strong>仅采用标题级信息</strong>，不对正文内容做任何推测（本期「无机酸-_-」的更新即属此类）。</li></ul>
+<h3>10.3 评分表口径与本地计算说明</h3>
+<ul><li><strong>LiveBench</strong>：直采官网实时榜（2026-06-25 发布，live 模式，2026-09-02 抓取），七大类为官方原始分类，<strong>含官方"每成功任务成本"</strong>。本期新增 Claude Fable 5.1 Max Effort（综合 83.4）居首。</li><li><strong>Artificial Analysis</strong>：智能指数 v4.1.1。<strong>今日官网实时表格未能成功抓取，行级数值沿用 v4.1.1 快照（页面最后更新 8/30）</strong>，仅排序参考，以官方页面为准。</li><li><strong>llm-stats</strong>：LLM Stats Score（独立综合分，方法论不同于 LiveBench），混合价 = (输入价 × 3 + 输出价) / 4，覆盖 369 个模型（2026-09-02 实时抓取）。</li><li><strong>性价比（5.4）</strong> = LiveBench 综合总分 ÷ llm-stats 混合价。<strong>这是跨口径组合指标</strong>，两个来源的模型版本与测试时点可能不完全对齐，仅用于量级判断，不宜精确解读。</li><li>三个口径方法论差异显著，<strong>分值不可横向比较</strong>，只能各自看排序。</li></ul>
+<h3>10.4 覆盖范围与已知缺口</h3>
+<ul><li>本期覆盖：三个社区信源（B站）、多引擎新闻检索 + Exa + Frontier Daily、DeepSeek 官方渠道、livebench.ai 实时榜、artificialanalysis.ai、llm-stats.com、GitHub AI 趋势榜（日榜/周榜）。</li><li><strong>已知缺口</strong>：① 「Icyの狼」「无机酸-_-」24h 更新为个人实验/测评，未进入正式条目；② 第四章 6 条快讯均未获多方核验；③ AA 行级数值为 v4.1.1 快照（8/30），未逐行实时重拉；④ DeepSeek 今日无 D，8/31 重大事件见上期。</li></ul>
+<h3>10.5 免责声明</h3>
+<ul><li>本报告由自动化流程生成，内容基于公开信息整理，<strong>不构成任何投资、采购或技术选型建议</strong>。</li><li>榜单数据为抓取时点快照，模型价格、Star 数、排名随时变动，使用前请以官方最新数据为准。</li><li>涉及融资金额、估值、营收等财务数据均为公开报道口径，未经审计。</li><li>报告已做脱敏处理，不含任何真实邮箱、电话、地址、密钥或个人身份信息。</li></ul>
+<hr>
+<p class="foot">AI 日报 · 2026-09-02 · 聚焦 AI Coding × 具身智能 · 共 15 条精选 + DeepSeek 专项（今日无 D）+ 6 条社区快讯</p>
+<button class="back-toc" type="button">↑ 回到目录</button>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var el = document.querySelector(this.getAttribute('href'));
+    if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+  });
+});
+var btn = document.querySelector('.back-toc');
+if(btn){ btn.addEventListener('click', function(){
+  var t = document.getElementById('toc');
+  if(t){ t.scrollIntoView({behavior:'smooth', block:'start'}); }
+}); }
+</script>
+</body>
+</html>
