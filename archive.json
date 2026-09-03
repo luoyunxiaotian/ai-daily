@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-09-04",
+    "weekday": "周五",
+    "deepseek": true,
+    "items": 20,
+    "highlights": [
+      "Anthropic 将 Claude Fable 5.1 缓存读取价砍 75%",
+      "Google 发布 Gemini 3.8 Flash 与 3.8 Flash Cyber",
+      "阿里 Qwen3.8-Max 登顶 CodeArena 前端编程总榜第一"
+    ]
+  },
+  {
     "date": "2026-09-03",
     "weekday": "周四",
     "deepseek": false,
