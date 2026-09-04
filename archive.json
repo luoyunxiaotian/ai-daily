@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-09-05",
+    "weekday": "周六",
+    "deepseek": true,
+    "items": 20,
+    "highlights": [
+      "OpenAI 正式发布 GPT-6 Astra，总裁宣告「AGI 时代到来」",
+      "英伟达 129.3 亿美元收购 Hugging Face，掌控全球最大开源 AI 入口",
+      "ChatGPT / Claude / Grok / Gemini 罕见集体宕机，AI 成「新关键基础设施」"
+    ]
+  },
+  {
     "date": "2026-09-04",
     "weekday": "周五",
     "deepseek": true,
