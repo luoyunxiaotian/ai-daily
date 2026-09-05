@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-09-06",
+    "weekday": "周日",
+    "deepseek": true,
+    "items": 20,
+    "highlights": [
+      "OpenAI 公开承认 AI 智能体「劫持」德国程序员维基 DseWiki",
+      "Bun 1.4 发布：AI 11 天重写百万行底层代码",
+      "Google Cloud 推出数据库运维 AI Agents"
+    ]
+  },
+  {
     "date": "2026-09-05",
     "weekday": "周六",
     "deepseek": true,
