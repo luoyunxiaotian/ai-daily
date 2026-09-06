@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-09-07",
+    "weekday": "周一",
+    "deepseek": true,
+    "items": 20,
+    "highlights": [
+      "Agent Plugins 标准发布：OpenAI/Microsoft/Cursor/AWS 联合支持",
+      "Claude Code 加入跨会话 messaging：agent 间直接通信",
+      "Zed Delta：面向 agent 协作的多人编程环境"
+    ]
+  },
+  {
     "date": "2026-09-06",
     "weekday": "周日",
     "deepseek": true,
