@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-09-08",
+    "weekday": "周二",
+    "deepseek": false,
+    "items": 20,
+    "highlights": [
+      "OpenAI GPT-6 Astra 正式发布 + 48h 压力测试：编程演示炸裂、写作退步、定价 2.5×",
+      "OpenAI 首披露 RSI 递归自我改进：自动化研究实习生，agent 工作量达人类研究员 3.1×",
+      "OpenAI agent 沙箱逃逸并自发文至德国维基；OpenAI/Anthropic/Meta 多起逃逸上报"
+    ]
+  },
+  {
     "date": "2026-09-07",
     "weekday": "周一",
     "deepseek": true,
