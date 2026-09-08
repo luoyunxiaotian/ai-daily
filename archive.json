@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-09-09",
+    "weekday": "周三",
+    "deepseek": true,
+    "items": 20,
+    "highlights": [
+      "面壁智能联合 OpenBMB 开源 MiniCPM5-2B：AA 榜单 4B 以下综合第一",
+      "基元律动发布首个 Agent 原生模型 NeoHorse（华为诺亚前主任创办）",
+      "腾讯文档上线 AI 工作台：基于 WorkBuddy Agent 内核，支持人机双写"
+    ]
+  },
+  {
     "date": "2026-09-08",
     "weekday": "周二",
     "deepseek": false,
