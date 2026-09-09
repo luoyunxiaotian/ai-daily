@@ -143,6 +143,43 @@ CONF_MAP = [
     ("\U0001F534 \u5f85\u9a8c\u8bc1", "t-pend"),
 ]
 
+# 置信度正则：兼容带/不带 emoji 前缀、带/不带加粗的多种写法。
+#   ✅ 已确认 / **已确认** / 已确认（官方公告）/ <strong>已确认</strong>
+#   🟡 大概率属实 / **大概率** / 大概率（统计口径）
+#   🔴 待验证 / **待验证** / ⚠️ 待验证 —— 单源
+# 注意：inline() 里 ** 已被转成 <strong>，所以这里**不能**再要求字面星号。
+CONF_RE = [
+    (re.compile(r"(?:\u2705\s*)?\u5df2\u786e\u8ba4(?:（[^）]*）)?"), "t-conf"),
+    (re.compile(r"(?:\U0001F7E1\s*)?\u5927\u6982\u7387(?:\u5c5e\u5b9e)?(?:（[^）]*）)?"), "t-prob"),
+    (re.compile(r"(?:\U0001F534\s*|\u26A0\uFE0F\s*)?\u5f85\u9a8c\u8bc1(?:（[^）]*）)?"), "t-pend"),
+]
+
+_TAG_PLACEHOLDER = "\x00TAG%d\x00"
+
+
+def tag_confidence(out):
+    """把文本中的置信度文案包成 .tag 标签。
+
+    先把已存在的 <span class="tag ...">...</span> 整体挖成占位符，避免重复嵌套包裹。
+    """
+    # 1) 保护已有标签
+    existing = []
+
+    def _stash(m):
+        existing.append(m.group(0))
+        return _TAG_PLACEHOLDER % (len(existing) - 1)
+
+    out = re.sub(r'<span class="tag [^"]*">.*?</span>', _stash, out)
+
+    # 2) 包裹裸文案
+    for pat, cls in CONF_RE:
+        out = pat.sub(lambda m: '<span class="tag %s">%s</span>' % (cls, m.group(0)), out)
+
+    # 3) 还原
+    for idx, tag in enumerate(existing):
+        out = out.replace(_TAG_PLACEHOLDER % idx, tag)
+    return out
+
 
 def slugify(text):
     """GitHub 风格锚点：去掉非字母数字/中文字符，空格转连字符，转小写。"""
@@ -162,6 +199,7 @@ def inline(text):
     out = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2">\1</a>', out)
     for token, cls in CONF_MAP:
         out = out.replace(token, '<span class="tag %s">%s</span>' % (cls, token))
+    out = tag_confidence(out)
     return out
 
 
