@@ -217,7 +217,12 @@ def render_bar_table(header, rows):
         strip = lambda x: re.sub(r"[*`]", "", x).strip()
         name = strip(r[1])
         score, price, ratio, bar = strip(r[2]), strip(r[3]), strip(r[4]), r[5]
+        # 宽度百分比：优先取独立的「占比」列（r[5]）；若该列缺失/无 %
+        # （例如把百分比并进了「性价比指数」列写成 "152.4 (100%)"），
+        # 则回退到指数列 r[4] 中查找，避免整表渲染成 width:0.0%。
         m = re.search(r"([\d.]+)\s*%", bar)
+        if not m:
+            m = re.search(r"[\(（]\s*([\d.]+)\s*%", strip(r[4]))
         pct = float(m.group(1)) if m else 0.0
         ds = " ds" if re.search(r"deepseek|glm", name, re.I) else ""
         parts.append(
