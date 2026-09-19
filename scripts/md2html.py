@@ -141,6 +141,9 @@ CONF_MAP = [
     ("\u2705 \u5df2\u786e\u8ba4", "t-conf"),
     ("\U0001F7E1 \u5927\u6982\u7387\u5c5e\u5b9e", "t-prob"),
     ("\U0001F534 \u5f85\u9a8c\u8bc1", "t-pend"),
+    ("\u4e0d\u9002\u7528", "t-mute"),
+    ("\u672a\u5f00\u542f", "t-mute"),
+    ("\u5df2\u9000\u5f79", "t-mute"),
 ]
 
 # 置信度正则：兼容带/不带 emoji 前缀、带/不带加粗的多种写法。
@@ -162,6 +165,17 @@ def tag_confidence(out):
 
     先把已存在的 <span class="tag ...">...</span> 整体挖成占位符，避免重复嵌套包裹。
     """
+    # 0) 保护 href="..." / id="..." 里的锚点文本：
+    #    目录链接形如 href="#五社区快讯待验证"，若让置信度正则在 href 内部
+    #    把「待验证」包成 <span>，链接会被截断成死链（2026-09-20 踩坑）。
+    hrefs = []
+
+    def _stash_href(m):
+        hrefs.append(m.group(0))
+        return "\x00HREF%d\x00" % (len(hrefs) - 1)
+
+    out = re.sub(r'(?:href|id)="[^"]*"', _stash_href, out)
+
     # 1) 保护已有标签
     existing = []
 
@@ -178,6 +192,8 @@ def tag_confidence(out):
     # 3) 还原
     for idx, tag in enumerate(existing):
         out = out.replace(_TAG_PLACEHOLDER % idx, tag)
+    for idx, h in enumerate(hrefs):
+        out = out.replace("\x00HREF%d\x00" % idx, h)
     return out
 
 
