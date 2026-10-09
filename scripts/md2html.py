@@ -209,6 +209,19 @@ def slugify(text):
 
 def inline(text):
     """行内标记转换。"""
+    # 0) 先保护作者手写的状态标签，例如 <span class="t-conf">已确认</span>。
+    #    这些标签常出现在 ### 标题里；若先做 html.escape，尖括号会被转义成
+    #    &lt;span ...&gt;，页面会把标签当字面文本显示出来（2026-10-09 踩坑）。
+    raw_tags = []
+
+    def _stash_raw(m):
+        # 统一补上 .tag 基类，保证手写标签与自动生成的标签外观一致
+        raw_tags.append(m.group(0).replace('<span class="t-', '<span class="tag t-'))
+        return "\x00RAW%d\x00" % (len(raw_tags) - 1)
+
+    text = re.sub(r'<span class="(?:tag )?t-(?:conf|prob|pend|mute)">.*?</span>',
+                  _stash_raw, text)
+
     out = html.escape(text, quote=False)
     out = re.sub(r"`([^`]+)`", r"<code>\1</code>", out)
     out = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", out)
@@ -216,6 +229,8 @@ def inline(text):
     for token, cls in CONF_MAP:
         out = out.replace(token, '<span class="tag %s">%s</span>' % (cls, token))
     out = tag_confidence(out)
+    for idx, tag in enumerate(raw_tags):
+        out = out.replace("\x00RAW%d\x00" % idx, tag)
     return out
 
 
