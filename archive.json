@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-10-12",
+    "weekday": "周一",
+    "deepseek": true,
+    "items": 13,
+    "highlights": []
+  },
+  {
     "date": "2026-10-11",
     "weekday": "周日",
     "deepseek": true,
