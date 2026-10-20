@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-10-20",
+    "weekday": "周二",
+    "deepseek": false,
+    "items": 29,
+    "highlights": [
+      "AI 编程助手市场份额 2026-10：Claude Code 首超 Copilot，Codex 近三倍增长",
+      "最佳 AI 编程智能体 2026-10 排行榜：Terminal-Bench 4.0 Codex+GPT-6 Astra 居首",
+      "LiveBench 2.0 发布：抗污染长程基准，新增 Agentic / 浏览器使用 / 研究设计维度"
+    ]
+  },
+  {
     "date": "2026-10-19",
     "weekday": "周一",
     "deepseek": false,
