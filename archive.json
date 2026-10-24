@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-10-25",
+    "weekday": "周日",
+    "deepseek": true,
+    "items": 21,
+    "highlights": [
+      "Kimi K3.1 Pro 进入 LiveBench 2.0（总评 76.7）并登 AA Intelligence Index 第 4（开放权重第一）（发布 2026-10-23，🟢 已确认）",
+      "AWS 开源 agent 基础设施：agent-toolkit-for-aws + Infinity 长等待并发运行时（2026-10-24，🟢 已确认）",
+      "Google Agent Compute Engine：永不持有凭证的硬件隔离 agent 沙箱（2026-10-24，🟢 已确认）"
+    ]
+  },
+  {
     "date": "2026-10-24",
     "weekday": "周六",
     "deepseek": false,
