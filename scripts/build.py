@@ -30,6 +30,7 @@ WD = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
 TITLE_PATTERNS = [
     re.compile(r"^###\s+(\d{1,2})\.\s+(.+?)\s*$"),          # ### 1. xxx
     re.compile(r"^\*\*(\d{1,2})\.\s+(.+?)\*\*\s*$"),         # **1. xxx**
+    re.compile(r"^\*\*([CE]\d{1,2})\.\s+(.+?)\*\*\s*$"),     # **C1. xxx** / **E1. xxx**
 ]
 
 CLEAN = [
@@ -77,7 +78,7 @@ def extract_meta(md_path):
 
     # 规模统计
     meta["counts"]["chars"] = len(text)
-    meta["counts"]["items"] = len(re.findall(r"^(?:###\s+\d{1,2}\.|\*\*\d{1,2}\.\s)", text, re.M))
+    meta["counts"]["items"] = len(re.findall(r"^(?:###\s+\d{1,2}\.|\*\*(?:[A-Z])?\d{1,2}\.\s)", text, re.M))
     meta["counts"]["tables"] = text.count("\n|---") + text.count("\n|--:") + text.count("\n|:--")
     meta["has_community"] = bool(re.search(r"社区(?:信源|快讯)", text))
     meta["has_pvp"] = "Price vs Performance" in text
