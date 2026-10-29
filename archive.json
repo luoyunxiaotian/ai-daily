@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-10-30",
+    "weekday": "周五",
+    "deepseek": false,
+    "items": 21,
+    "highlights": [
+      "Google 发布 Gemini 4 Carbon：最安全模型，登顶 AA Intelligence Index v5.0（2026-10-29，🟢 已确认）",
+      "GitHub Copilot Fusion GA：按任务自动编排多模型（2026-10-29，🟢 已确认）",
+      "Cursor 发布 Agent SDK：把 AI 工作流定义为代码（2026-10-29，🟢 已确认）"
+    ]
+  },
+  {
     "date": "2026-10-29",
     "weekday": "周四",
     "deepseek": false,
