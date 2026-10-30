@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-10-31",
+    "weekday": "周六",
+    "deepseek": true,
+    "items": 21,
+    "highlights": [
+      "Mistral 开源 Large 4（ML4）开放权重：万亿参数「主权 AI + 智能体编程 + 网络防御」三合一（2026-10-30，🟢 已确认）",
+      "北京《关于加快智能体引领发展的若干措施》发布：国内首个开源智能体 OS「灵玑OS」（2026-10-31，🟢 已确认）",
+      "ThinkingAI 发布 Agentic Engine 自助服务：专业增长能力下沉业务岗（2026-10-30，🟡 大概率）"
+    ]
+  },
+  {
     "date": "2026-10-30",
     "weekday": "周五",
     "deepseek": false,
