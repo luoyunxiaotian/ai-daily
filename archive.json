@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-02",
+    "weekday": "周一",
+    "deepseek": false,
+    "items": 31,
+    "highlights": [
+      "Anthropic 11-03 起为 4 款 Claude 加不可见水印——AI 内容溯源进入「默认签署」阶段",
+      "GitHub Copilot Fusion：路由多模型，接近 Opus 一半价格——\"路由器\"范式成主流",
+      "Gemini 4 Carbon 登顶 AA Intelligence Index v5 #1（59 分），安全团队优先访问——前沿模型分化出\"找漏洞\"专用通道"
+    ]
+  },
+  {
     "date": "2026-11-01",
     "weekday": "周日",
     "deepseek": false,
