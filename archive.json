@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-03",
+    "weekday": "周二",
+    "deepseek": false,
+    "items": 29,
+    "highlights": [
+      "OpenAI 将于 11-12 终止向 Cursor 直接供应模型——开发者工具链的「供应集中风险」被摆上台面",
+      "DeepSeek Harness 公开「Super-agent」架构——把人类从「执行细节」上移到「决策与验收」",
+      "2026 AI 编程工具横评：Claude Code 80.9% SWE-bench 称霸，Cursor 72.3%，Devin 2.0 76.8%"
+    ]
+  },
+  {
     "date": "2026-11-02",
     "weekday": "周一",
     "deepseek": false,
