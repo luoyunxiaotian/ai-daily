@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-04",
+    "weekday": "周三",
+    "deepseek": false,
+    "items": 30,
+    "highlights": [
+      "Google 将安卓开发工具开放给 Claude Code、Codex 等第三方智能体——\"自带智能体\"支持 40+ 编码 agent",
+      "Anthropic 收紧 Claude Code Harness，紧急限制游戏逆向行为——\"暗改\"引发工作流合规讨论",
+      "清华 × 微软 HarnessMM：工具结果后不再冗余调 LLM，token 最多减 87.93%、成功率反升"
+    ]
+  },
+  {
     "date": "2026-11-03",
     "weekday": "周二",
     "deepseek": false,
