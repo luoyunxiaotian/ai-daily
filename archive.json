@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-05",
+    "weekday": "周四",
+    "deepseek": true,
+    "items": 34,
+    "highlights": [
+      "腾讯混元 Hy4 正式版发布：770B MoE 首次引入视觉与电脑操作，跻身最强开源模型之列",
+      "Claude Code 产品负责人 Cat Wu 离职：10 天内第 4 位核心成员出走，正值 Anthropic IPO 前后",
+      "Postman 被曝静默给 Codex / Claude Code 安装插件并回传 API 数据"
+    ]
+  },
+  {
     "date": "2026-11-04",
     "weekday": "周三",
     "deepseek": false,
