@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-06",
+    "weekday": "周五",
+    "deepseek": true,
+    "items": 35,
+    "highlights": [
+      "OpenAI 发布 GPT-6 Cyber：网络安全专用模型，Firefox 挖出 81 个未知高危漏洞，Linux 生成 948 条提权利用",
+      "OpenAI 收购 Pierre Computer、Meta 收购 Conductor：同一天两笔，竞争从模型转向编码工具链",
+      "Cursor 发布「Build Live Apps in Cursor」：一句话生成含数据库、认证与托管的可分享线上应用"
+    ]
+  },
+  {
     "date": "2026-11-05",
     "weekday": "周四",
     "deepseek": true,
