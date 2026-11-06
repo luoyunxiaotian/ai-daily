@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-07",
+    "weekday": "周六",
+    "deepseek": true,
+    "items": 35,
+    "highlights": [
+      "OpenAI Codex 0.167.0 上线 Agent Command Center：编码工具从「单次对话」转向「多会话控制台」",
+      "Claude Code 2.1.319 发布：MCP 任务后台化 + 拒绝而非等待 + 网关下 auto mode 收紧",
+      "Cursor 上线实时语音对话「Voice Chat with Agents」：说话指挥编码 Agent，Grok Voice 供语音层"
+    ]
+  },
+  {
     "date": "2026-11-06",
     "weekday": "周五",
     "deepseek": true,
