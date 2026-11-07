@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-08",
+    "weekday": "周日",
+    "deepseek": true,
+    "items": 30,
+    "highlights": [
+      "Google DeepMind 用 AI agents 发现 1024-bit RSA 两处未知弱点：自动化密码分析从「辅助」走到「提出算法」",
+      "Gemini Omni 1.2 Flash 正式 GA：15 秒 + 降价 30% + 多轮对话式编辑，视频模型进入「迭代而非重生成」",
+      "Inkling 2 Small 后续确认：明确「下周」发 Apache 2.0 权重，厂商报 SWE-Bench Pro v2 Hard 86.3%"
+    ]
+  },
+  {
     "date": "2026-11-07",
     "weekday": "周六",
     "deepseek": true,
