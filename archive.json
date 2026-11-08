@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-09",
+    "weekday": "周一",
+    "deepseek": true,
+    "items": 30,
+    "highlights": [
+      "GitHub 公布 Rubicon 新 Git 存储架构：单仓库 5000 个 Agent、每秒 7200 次推送",
+      "Google ADK 2.14.0 把 A2A 协议转为 stable：Agent 间通信有了稳定插座，同时收紧脚本执行",
+      "Open WebUI 0.13.1 把编码 Agent 放进模型选择器：聊天窗口变成 Agent 入口，并引入「审核模型」自动批准工具调用"
+    ]
+  },
+  {
     "date": "2026-11-08",
     "weekday": "周日",
     "deepseek": true,
