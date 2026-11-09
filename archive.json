@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-10",
+    "weekday": "周二",
+    "deepseek": true,
+    "items": 30,
+    "highlights": [
+      "Anthropic 发布 Claude Fable 5.2 与 Mythos 5.2：同一底层模型，编码与机器人分数大幅跃升且标准价下调",
+      "Meta 发布 Muse Ember：与 Haiku 5.5 同标价，每任务成本却只有约三分之一",
+      "Mistral 开放 1 万亿参数 Large 4 权重：47% token 节省，但 MaaS 转售需单独授权、官方自述存在被滥用风险"
+    ]
+  },
+  {
     "date": "2026-11-09",
     "weekday": "周一",
     "deepseek": true,
