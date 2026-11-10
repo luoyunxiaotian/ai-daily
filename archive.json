@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-11",
+    "weekday": "周三",
+    "deepseek": true,
+    "items": 30,
+    "highlights": [
+      "MiniMax 开源 H3-Image：10 秒出 4K、最多 16 张参考图，并同步接入 MiniMax Code",
+      "Claude Fable 5.2 的窗口内增量：1000 智能体 30 小时完成费马大定理形式化，Anthropic 同日启动 IPO 路演",
+      "Meta Muse Ember 全面开放：$0.10 / $0.50 的智能体底层引擎，AA 每任务成本仅 Haiku 5.5 的约三分之一"
+    ]
+  },
+  {
     "date": "2026-11-10",
     "weekday": "周二",
     "deepseek": true,
