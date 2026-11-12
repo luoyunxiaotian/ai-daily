@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-13",
+    "weekday": "周五",
+    "deepseek": false,
+    "items": 30,
+    "highlights": [
+      "Google 发布 Gemini 4 Hydrogen：把「日常执行模型」单独定价，Orchestrator 在同一会话内动态换模型",
+      "百度世界大会 2026 正式发布文心 5.5 Flash Preview：8 项自评基准公开，11-25 开源仍是承诺",
+      "阿里官宣 Qwen4：架构级升级但依旧无技术报告、无基准表"
+    ]
+  },
+  {
     "date": "2026-11-12",
     "weekday": "周四",
     "deepseek": false,
