@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-14",
+    "weekday": "周六",
+    "deepseek": true,
+    "items": 30,
+    "highlights": [
+      "DeepSeek 正式开放「全家桶」应用 API：把整个 App 的能力拆成可单独计费的接口",
+      "Gemini 4 Hydrogen 进入 LiveBench 2.0 全榜：77.0 / $1.924，「发布 → 独立长程基准摄入」跨两日闭合",
+      "阿里开源 open-code-review 登顶 GitHub 日榜：确定性流水线 + LLM Agent 的混合代码审查"
+    ]
+  },
+  {
     "date": "2026-11-13",
     "weekday": "周五",
     "deepseek": false,
