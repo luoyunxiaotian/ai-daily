@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-15",
+    "weekday": "周日",
+    "deepseek": false,
+    "items": 31,
+    "highlights": [
+      "DeepSeek「全家桶」API 的 11-14 开发者实测增量：托管搜索不可强制调用、无域名白名单、联网价不到对手 8%",
+      "Artificial Analysis 升级 Coding Agent Index 至 v2.1：平均分普降 5 分，Fable 5.2 与 Opus 5.5 并列 58",
+      "Claude Code 实验性 Code Mode + Antigravity Orchestrator：把「十次往返」压成一次、把「选模型」变成运行时路由"
+    ]
+  },
+  {
     "date": "2026-11-14",
     "weekday": "周六",
     "deepseek": true,
