@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-17",
+    "weekday": "周二",
+    "deepseek": true,
+    "items": 31,
+    "highlights": [
+      "DeepSeek 首次对 C 端免费用户限额：三项同时收紧，官方状态页却「一切正常」",
+      "腾讯 LoopForge 开源并全球推广：把「代码不是瓶颈、交接才是」写进可自托管的交付工作流",
+      "华为云 openPangu-2.1-Pro 上线 MaaS：国产 Agent 运行时能力清单被补齐"
+    ]
+  },
+  {
     "date": "2026-11-15",
     "weekday": "周日",
     "deepseek": false,
