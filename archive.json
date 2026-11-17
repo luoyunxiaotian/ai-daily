@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-18",
+    "weekday": "周三",
+    "deepseek": true,
+    "items": 31,
+    "highlights": [
+      "OpenAI 正式发布 GPT-6.2 Astra 与 GPT-6.2 Sol：旗舰 API 输入输出降价 20%、缓存输入降 60%",
+      "微软发布 MAI Code 2 与 MAI Code 2 Flash：以「可合并的 diff」为设计目标的双档编码模型",
+      "OpenAI 发布 Astra for Law 6.2：不换基座，靠「模型配置 + 检索索引 + 指令」登顶法律智能"
+    ]
+  },
+  {
     "date": "2026-11-17",
     "weekday": "周二",
     "deepseek": true,
