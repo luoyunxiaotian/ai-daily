@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-19",
+    "weekday": "周四",
+    "deepseek": true,
+    "items": 33,
+    "highlights": [
+      "DeepSeek 官方调整 API 定价：服务端搜索 / 抓取并入 Token 计费",
+      "Codex CLI 0.170.0 稳定版发布：WebRTC 语音与多智能体可观测性",
+      "编码 CLI 同日密集发版与配置键漂移：升级前必须读 breaking changes"
+    ]
+  },
+  {
     "date": "2026-11-18",
     "weekday": "周三",
     "deepseek": true,
