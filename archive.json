@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-20",
+    "weekday": "周五",
+    "deepseek": true,
+    "items": 33,
+    "highlights": [
+      "GitHub 三连更：CLI 可「等 PR 事件」取代轮询、Copilot 团队插件 GA、Evals 公测",
+      "Eclipse Enclave 1.0：Eclipse 基金会发布免费开源 AI 编码智能体沙箱",
+      "编码 CLI 版本矩阵（11-19 快照）：stable 与 latest 分裂，alpha/preview 只在测试机"
+    ]
+  },
+  {
     "date": "2026-11-19",
     "weekday": "周四",
     "deepseek": true,
