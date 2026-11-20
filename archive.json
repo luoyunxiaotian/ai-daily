@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-21",
+    "weekday": "周六",
+    "deepseek": true,
+    "items": 25,
+    "highlights": [
+      "腾讯混元 Hy4 正式开源权重：770B MoE、49B 激活，采用非 Apache 的 Hy License",
+      "Codex CLI 0.171.0 发布：GPT-6.2 Sol 升为默认，开放 --remote 远程会话",
+      "编码 CLI 密集发版与付费限额收紧：Hermes 0.23.3 / Goose 1.60.2 / Factory Droid 1.16.0 / Grok Build 1.0.92"
+    ]
+  },
+  {
     "date": "2026-11-20",
     "weekday": "周五",
     "deepseek": true,
