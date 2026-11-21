@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-22",
+    "weekday": "周日",
+    "deepseek": true,
+    "items": 25,
+    "highlights": [
+      "微软 MAI Code 2 七款自研模型定价披露：$1 / $5 每百万 Token，五折延至 2027-05",
+      "Codex 请求上限翻倍 + GPT-6.2 跨轮推理复用：编码 agent 的成本与运行时双优化",
+      "Gemini 4 Neon 铺进编码 harness，Gemini Mac 客户端可操控其他应用"
+    ]
+  },
+  {
     "date": "2026-11-21",
     "weekday": "周六",
     "deepseek": true,
