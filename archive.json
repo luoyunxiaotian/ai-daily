@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-23",
+    "weekday": "周一",
+    "deepseek": true,
+    "items": 26,
+    "highlights": [
+      "Sarvam AI 官方发布 Sarvam-105B-1711 开放权重检查点，八项 Agent 基准平均 73.9、混合价降至 $0.15/百万 Token",
+      "DeepSeek 二轮融资的产业协同与锁定结构被系统披露：外部股东仅享经济收益、七年锁定，梁文锋合计持股约 67.42%",
+      "编码 Agent 的「无人值守权限」成为同日三条更新的共同主题：Cline 自动批准、OpenAI Agents SDK preview、Copilot CLI 进程清理"
+    ]
+  },
+  {
     "date": "2026-11-22",
     "weekday": "周日",
     "deepseek": true,
