@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-24",
+    "weekday": "周二",
+    "deepseek": true,
+    "items": 34,
+    "highlights": [
+      "智谱 GLM-5.4 正式发布：Loop Transformer 架构 +「泛 Coding」起点",
+      "编码 CLI 版本流：opencode 2.4.0 Code Mode 插件选项变更",
+      "Claude Code 测试 Code Mode：多步工具调用改为「写并运行代码」"
+    ]
+  },
+  {
     "date": "2026-11-23",
     "weekday": "周一",
     "deepseek": true,
