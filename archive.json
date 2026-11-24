@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-25",
+    "weekday": "周三",
+    "deepseek": true,
+    "items": 26,
+    "highlights": [
+      "Codex CLI v0.172.0 恢复续跑沙盒上下文，GPT-6.2 Sol / Astra 双旗舰入列",
+      "Claude Code v2.1.331 修复最长 30 分钟 MCP 卡顿，claude doctor 增加连通性诊断",
+      "GitHub Copilot CLI v1.0.115 引入 ACP 结构化提问，三款新模型进 model picker"
+    ]
+  },
+  {
     "date": "2026-11-24",
     "weekday": "周二",
     "deepseek": true,
