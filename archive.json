@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-26",
+    "weekday": "周四",
+    "deepseek": true,
+    "items": 26,
+    "highlights": [
+      "JetBrains 开源 Mellum2.1 Instruct：12B MoE 直答模型，智能体任务 token 降 45%",
+      "Claude Code v2.1.332 落地 MCP 服务投递技能，新增技能加载 Shell 命令拦截钩子",
+      "谷歌工程师点名「智能体分心」：陈旧 TODO 与已解决缺陷引用正在偷走 token"
+    ]
+  },
+  {
     "date": "2026-11-25",
     "weekday": "周三",
     "deepseek": true,
