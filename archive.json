@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-27",
+    "weekday": "周五",
+    "deepseek": true,
+    "items": 26,
+    "highlights": [
+      "蚂蚁百灵开源 Ling-3.2-air：1240 亿总参 / 55 亿激活，SWE-bench Pro 58.28",
+      "PrismML 发布 Ternary Bonsai 2.5：27B 三值权重压至 5.9GB，单张 4090 跑约 204 tok/s",
+      "OpenAI 开测「私有推理」：运行时隔离客户数据，连内部员工都无法查看"
+    ]
+  },
+  {
     "date": "2026-11-26",
     "weekday": "周四",
     "deepseek": true,
