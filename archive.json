@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-28",
+    "weekday": "周六",
+    "deepseek": true,
+    "items": 26,
+    "highlights": [
+      "知乎 × DeepSeek 内容合作：API 按需检索 + 来源标注 + 一键跳转，日均 API 调用较 7 月 +328%",
+      "DeepSeek 安卓端 2.10.0 上线计费面板：每轮对话显示 token 用量与资费，与 API 同价",
+      "蚂蚁百灵开源 Ling-3.2-air：1240 亿总参 / 55 亿激活，SWE-bench Pro 58.28（前代 26.4）"
+    ]
+  },
+  {
     "date": "2026-11-27",
     "weekday": "周五",
     "deepseek": true,
